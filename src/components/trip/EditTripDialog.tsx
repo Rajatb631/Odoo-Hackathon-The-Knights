@@ -101,7 +101,7 @@ export function EditTripDialog({ initial }: { initial: Initial }) {
             <Textarea id="edit-desc" rows={3} {...register("description")} />
           </div>
           <div className="flex justify-between gap-2">
-            <Button type="button" variant="ghost" onClick={onDelete} disabled={pending}>
+            <Button type="button" variant="destructive" onClick={onDelete} disabled={pending}>
               Delete trip
             </Button>
             <div className="flex gap-2">

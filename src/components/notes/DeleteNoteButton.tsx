@@ -11,7 +11,7 @@ export function DeleteNoteButton({ noteId }: { noteId: string }) {
   return (
     <Button
       size="sm"
-      variant="ghost"
+      variant="destructive"
       disabled={pending}
       onClick={() =>
         startTransition(async () => {
