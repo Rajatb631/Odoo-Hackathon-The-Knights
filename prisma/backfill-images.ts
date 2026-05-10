@@ -62,7 +62,7 @@ async function main() {
     i++
     await prisma.image.update({
       where: { id: img.id },
-      data: { data: photo.buf, mimeType: photo.mime },
+      data: { data: new Uint8Array(photo.buf), mimeType: photo.mime },
     })
     if (i % 25 === 0) console.log(`  ${i} updated…`)
   }
