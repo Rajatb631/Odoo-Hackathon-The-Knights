@@ -12,7 +12,9 @@ export default {
         path.startsWith("/dashboard") ||
         path.startsWith("/trips") ||
         path.startsWith("/profile") ||
-        path.startsWith("/search")
+        path.startsWith("/search") ||
+        path.startsWith("/community") ||
+        path.startsWith("/admin")
       if (isProtected && !loggedIn) return false
       return true
     },

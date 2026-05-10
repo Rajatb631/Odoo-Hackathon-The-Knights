@@ -16,10 +16,12 @@ export function Navbar({
   name,
   email,
   photoId,
+  role,
 }: {
   name?: string | null
   email?: string | null
   photoId?: string | null
+  role?: "USER" | "ADMIN"
 }) {
   const initials = (name ?? email ?? "U")
     .split(" ")
@@ -38,6 +40,7 @@ export function Navbar({
         <nav className="flex items-center gap-1">
           <Button asChild variant="ghost" size="sm"><Link href="/dashboard">Dashboard</Link></Button>
           <Button asChild variant="ghost" size="sm"><Link href="/trips">My Trips</Link></Button>
+          <Button asChild variant="ghost" size="sm"><Link href="/community">Community</Link></Button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="sm">Search ▾</Button>
@@ -62,6 +65,9 @@ export function Navbar({
               <DropdownMenuLabel>{name || email}</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem asChild><Link href="/profile">Profile</Link></DropdownMenuItem>
+              {role === "ADMIN" && (
+                <DropdownMenuItem asChild><Link href="/admin">Admin</Link></DropdownMenuItem>
+              )}
               <DropdownMenuSeparator />
               <DropdownMenuItem onClick={() => signOut({ callbackUrl: "/login" })}>
                 Sign out
