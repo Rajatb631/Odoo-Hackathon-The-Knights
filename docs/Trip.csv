@@ -1,4 +1,0 @@
-id,ownerId,name,description,coverImageId,startDate,endDate,budget,status,isPublic,shareToken,createdAt
-trip_europe,usr_alice,Classic European Summer,"Two weeks exploring Paris and Rome with art, food, and romance.",img_trip_europe,2025-06-15,2025-06-29,3500.00,UPCOMING,true,euro-summer-2025-alice,2025-01-01 00:00:00
-trip_sea,usr_bob,Southeast Asia Wanderlust,"Tokyo culture shock, then decompress in Bali for two weeks.",img_trip_sea,2025-03-01,2025-03-21,2800.00,COMPLETED,true,sea-wanderlust-2025-bob,2025-01-01 00:00:00
-trip_usa,usr_dave,New York City Blitz,"Long weekend packing in every major NYC landmark and a Broadway show.",img_trip_usa,2025-05-09,2025-05-12,1200.00,ONGOING,false,,2025-01-01 00:00:00

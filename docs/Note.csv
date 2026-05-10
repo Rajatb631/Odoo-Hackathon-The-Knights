@@ -1,6 +1,0 @@
-id,tripId,authorId,stopId,body,createdAt
-note_01,trip_europe,usr_alice,stop_paris,Café de Flore for breakfast on day 1 — get there before 9 am to beat the queue.,2025-05-10 08:00:00
-note_02,trip_europe,usr_alice,stop_rome,Remember: Vatican Museums need separate tickets — book at least 3 weeks ahead.,2025-05-12 14:30:00
-note_03,trip_sea,usr_bob,stop_tokyo,7-Eleven onigiri breakfast = best decision ever. Convenience stores here are elite.,2025-03-03 07:45:00
-note_04,trip_sea,usr_bob,stop_bali,Negotiated motorbike rental down to $5/day. Always bargain with a smile.,2025-03-12 16:00:00
-note_05,trip_usa,usr_dave,,Picked up NYC CityPASS — saves ~40% across major attractions. Highly recommend.,2025-05-09 20:00:00

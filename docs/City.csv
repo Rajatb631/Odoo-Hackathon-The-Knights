@@ -1,6 +1,0 @@
-id,name,country,region,costIndex,popularity,imageId
-city_paris,Paris,France,Île-de-France,8,95,img_city_paris
-city_rome,Rome,Italy,Lazio,7,90,img_city_rome
-city_tokyo,Tokyo,Japan,Kantō,7,92,img_city_tokyo
-city_bali,Bali,Indonesia,Lesser Sunda Islands,3,85,img_city_bali
-city_nyc,New York,USA,New York State,9,97,img_city_nyc
