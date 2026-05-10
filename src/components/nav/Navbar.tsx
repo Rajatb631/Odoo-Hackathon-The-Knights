@@ -12,7 +12,15 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
-export function Navbar({ name, email }: { name?: string | null; email?: string | null }) {
+export function Navbar({
+  name,
+  email,
+  photoId,
+}: {
+  name?: string | null
+  email?: string | null
+  photoId?: string | null
+}) {
   const initials = (name ?? email ?? "U")
     .split(" ")
     .map((s) => s[0])
@@ -32,12 +40,28 @@ export function Navbar({ name, email }: { name?: string | null; email?: string |
           <Button asChild variant="ghost" size="sm"><Link href="/trips">My Trips</Link></Button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="sm" className="ml-2 h-8 w-8 rounded-full p-0">
-                {initials}
+              <Button variant="ghost" size="sm">Search ▾</Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem asChild><Link href="/search/cities">Cities</Link></DropdownMenuItem>
+              <DropdownMenuItem asChild><Link href="/search/activities">Activities</Link></DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" size="sm" className="ml-2 h-8 w-8 rounded-full p-0 overflow-hidden">
+                {photoId ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={`/api/images/${photoId}`} alt="" className="h-8 w-8 object-cover" />
+                ) : (
+                  <span>{initials}</span>
+                )}
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
               <DropdownMenuLabel>{name || email}</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem asChild><Link href="/profile">Profile</Link></DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem onClick={() => signOut({ callbackUrl: "/login" })}>
                 Sign out

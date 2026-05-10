@@ -9,7 +9,8 @@ export default middleware((req) => {
   const isProtected =
     path.startsWith("/dashboard") ||
     path.startsWith("/trips") ||
-    path.startsWith("/profile")
+    path.startsWith("/profile") ||
+    path.startsWith("/search")
   if (isProtected && !loggedIn) {
     const url = req.nextUrl.clone()
     url.pathname = "/login"
