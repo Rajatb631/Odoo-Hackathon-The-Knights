@@ -1,0 +1,56 @@
+id,cityId,name,type,description,cost,durationMin,imageId
+act_001,city_paris,Eiffel Tower Visit,sightseeing,Experience Eiffel Tower Visit in Paris.,25.0,120,img_act_001
+act_002,city_rome,Louvre Museum,museum,Experience Louvre Museum in Rome.,17.0,180,img_act_002
+act_003,city_tokyo,Seine River Cruise,sightseeing,Experience Seine River Cruise in Tokyo.,15.0,60,img_act_003
+act_004,city_new_york,Colosseum Tour,sightseeing,Experience Colosseum Tour in New York.,18.0,120,img_act_004
+act_005,city_bangkok,Vatican Museums,museum,Experience Vatican Museums in Bangkok.,20.0,150,img_act_005
+act_006,city_barcelona,Tsukiji Market Walk,food,Experience Tsukiji Market Walk in Barcelona.,0.0,90,img_act_006
+act_007,city_bali,Shibuya Crossing,sightseeing,Experience Shibuya Crossing in Bali.,0.0,30,img_act_007
+act_008,city_amsterdam,Central Park Stroll,nature,Experience Central Park Stroll in Amsterdam.,0.0,60,img_act_008
+act_009,city_sydney,Broadway Show,cultural,Experience Broadway Show in Sydney.,120.0,150,img_act_009
+act_010,city_dubai,Thai Cooking Class,food,Experience Thai Cooking Class in Dubai.,45.0,180,img_act_010
+act_011,city_istanbul,Sagrada Familia,sightseeing,Experience Sagrada Familia in Istanbul.,26.0,90,img_act_011
+act_012,city_prague,Park Güell,nature,Experience Park Güell in Prague.,10.0,60,img_act_012
+act_013,city_lisbon,Ubud Rice Terraces,nature,Experience Ubud Rice Terraces in Lisbon.,0.0,90,img_act_013
+act_014,city_singapore,Balinese Dance Show,cultural,Experience Balinese Dance Show in Singapore.,15.0,60,img_act_014
+act_015,city_cape_town,Anne Frank House,museum,Experience Anne Frank House in Cape Town.,14.0,90,img_act_015
+act_016,city_mexico_city,Canal Bike Tour,adventure,Experience Canal Bike Tour in Mexico City.,18.0,120,img_act_016
+act_017,city_cairo,Sydney Opera House Tour,cultural,Experience Sydney Opera House Tour in Cairo.,43.0,60,img_act_017
+act_018,city_buenos_aires,Bondi Beach Surf Lesson,adventure,Experience Bondi Beach Surf Lesson in Buenos Aires.,60.0,120,img_act_018
+act_019,city_vienna,Desert Safari Dubai,adventure,Experience Desert Safari Dubai in Vienna.,85.0,240,img_act_019
+act_020,city_seoul,Burj Khalifa At The Top,sightseeing,Experience Burj Khalifa At The Top in Seoul.,35.0,90,img_act_020
+act_021,city_marrakech,Bosphorus Cruise,sightseeing,Experience Bosphorus Cruise in Marrakech.,20.0,90,img_act_021
+act_022,city_kyoto,Grand Bazaar Shopping,shopping,Experience Grand Bazaar Shopping in Kyoto.,0.0,120,img_act_022
+act_023,city_london,Prague Castle Walk,sightseeing,Experience Prague Castle Walk in London.,0.0,120,img_act_023
+act_024,city_zurich,Old Town Square,sightseeing,Experience Old Town Square in Zurich.,0.0,60,img_act_024
+act_025,city_copenhagen,Tram 28 Ride Lisbon,sightseeing,Experience Tram 28 Ride Lisbon in Copenhagen.,3.0,45,img_act_025
+act_026,city_vancouver,Sintra Day Trip,nature,Experience Sintra Day Trip in Vancouver.,25.0,300,img_act_026
+act_027,city_reykjavik,Gardens by the Bay,nature,Experience Gardens by the Bay in Reykjavik.,28.0,90,img_act_027
+act_028,city_athens,Singapore Food Tour,food,Experience Singapore Food Tour in Athens.,55.0,180,img_act_028
+act_029,city_budapest,Table Mountain Hike,adventure,Experience Table Mountain Hike in Budapest.,25.0,300,img_act_029
+act_030,city_ho_chi_minh_city,Cape Point Tour,nature,Experience Cape Point Tour in Ho Chi Minh City.,35.0,240,img_act_030
+act_031,city_havana,Teotihuacan Pyramids,sightseeing,Experience Teotihuacan Pyramids in Havana.,8.0,180,img_act_031
+act_032,city_nairobi,Lucha Libre Match,cultural,Experience Lucha Libre Match in Nairobi.,15.0,120,img_act_032
+act_033,city_lima,Pyramids of Giza,sightseeing,Experience Pyramids of Giza in Lima.,10.0,180,img_act_033
+act_034,city_edinburgh,Nile Felucca Ride,adventure,Experience Nile Felucca Ride in Edinburgh.,20.0,90,img_act_034
+act_035,city_porto,Buenos Aires Tango Show,cultural,Experience Buenos Aires Tango Show in Porto.,50.0,120,img_act_035
+act_036,city_florence,Recoleta Cemetery Walk,cultural,Experience Recoleta Cemetery Walk in Florence.,0.0,60,img_act_036
+act_037,city_seville,Vienna Opera Night,cultural,Experience Vienna Opera Night in Seville.,150.0,180,img_act_037
+act_038,city_dubrovnik,Schönbrunn Palace,sightseeing,Experience Schönbrunn Palace in Dubrovnik.,22.0,120,img_act_038
+act_039,city_tallinn,Gyeongbokgung Palace,sightseeing,Experience Gyeongbokgung Palace in Tallinn.,3.0,90,img_act_039
+act_040,city_warsaw,DMZ Tour Seoul,cultural,Experience DMZ Tour Seoul in Warsaw.,55.0,300,img_act_040
+act_041,city_krakow,Marrakech Medina Walk,sightseeing,Experience Marrakech Medina Walk in Krakow.,0.0,90,img_act_041
+act_042,city_bruges,Hammam Spa Session,wellness,Experience Hammam Spa Session in Bruges.,40.0,90,img_act_042
+act_043,city_salzburg,Kinkaku-ji Temple,sightseeing,Experience Kinkaku-ji Temple in Salzburg.,5.0,60,img_act_043
+act_044,city_bergen,Arashiyama Bamboo Grove,nature,Experience Arashiyama Bamboo Grove in Bergen.,0.0,60,img_act_044
+act_045,city_ljubljana,Tower of London,museum,Experience Tower of London in Ljubljana.,30.0,120,img_act_045
+act_046,city_bratislava,Harry Potter Studio Tour,cultural,Experience Harry Potter Studio Tour in Bratislava.,55.0,180,img_act_046
+act_047,city_ghent,Blue Lagoon Iceland,wellness,Experience Blue Lagoon Iceland in Ghent.,65.0,180,img_act_047
+act_048,city_riga,Plitvice Lakes Hike,nature,Experience Plitvice Lakes Hike in Riga.,40.0,240,img_act_048
+act_049,city_vilnius,Acropolis Athens,sightseeing,Experience Acropolis Athens in Vilnius.,20.0,120,img_act_049
+act_050,city_valletta,Greek Islands Cruise,adventure,Experience Greek Islands Cruise in Valletta.,90.0,360,img_act_050
+act_051,city_nicosia,Budapest Thermal Baths,wellness,Experience Budapest Thermal Baths in Nicosia.,20.0,120,img_act_051
+act_052,city_tbilisi,Danube River Cruise,sightseeing,Experience Danube River Cruise in Tbilisi.,30.0,90,img_act_052
+act_053,city_yerevan,Mekong Delta Tour,nature,Experience Mekong Delta Tour in Yerevan.,35.0,300,img_act_053
+act_054,city_almaty,Cu Chi Tunnels,cultural,Experience Cu Chi Tunnels in Almaty.,8.0,120,img_act_054
+act_055,city_tashkent,Havana Salsa Night,nightlife,Experience Havana Salsa Night in Tashkent.,25.0,120,img_act_055

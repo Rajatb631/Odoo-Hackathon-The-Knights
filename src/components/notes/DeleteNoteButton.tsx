@@ -1,7 +1,9 @@
 "use client"
 
 import { useTransition } from "react"
+import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
+import { safeAction } from "@/lib/server-action-utils"
 import { deleteNote } from "@/server/actions/notes"
 
 export function DeleteNoteButton({ noteId }: { noteId: string }) {
@@ -11,7 +13,12 @@ export function DeleteNoteButton({ noteId }: { noteId: string }) {
       size="sm"
       variant="ghost"
       disabled={pending}
-      onClick={() => startTransition(() => deleteNote(noteId))}
+      onClick={() =>
+        startTransition(async () => {
+          const res = await safeAction(() => deleteNote(noteId))
+          if (!res.ok) toast.error(res.error)
+        })
+      }
     >
       Delete
     </Button>

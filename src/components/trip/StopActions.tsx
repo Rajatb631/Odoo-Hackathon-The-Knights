@@ -1,7 +1,9 @@
 "use client"
 
 import { useTransition } from "react"
+import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
+import { safeAction } from "@/lib/server-action-utils"
 import { deleteStop, moveStop, removeStopActivity } from "@/server/actions/stops"
 
 export function StopMoveButton({ stopId, direction, disabled }: { stopId: string; direction: "up" | "down"; disabled?: boolean }) {
@@ -11,7 +13,12 @@ export function StopMoveButton({ stopId, direction, disabled }: { stopId: string
       size="sm"
       variant="outline"
       disabled={disabled || pending}
-      onClick={() => startTransition(() => moveStop(stopId, direction))}
+      onClick={() =>
+        startTransition(async () => {
+          const res = await safeAction(() => moveStop(stopId, direction))
+          if (!res.ok) toast.error(res.error)
+        })
+      }
     >
       {direction === "up" ? "↑" : "↓"}
     </Button>
@@ -27,7 +34,11 @@ export function DeleteStopButton({ stopId }: { stopId: string }) {
       disabled={pending}
       onClick={() => {
         if (!confirm("Delete this stop and its activities?")) return
-        startTransition(() => deleteStop(stopId))
+        startTransition(async () => {
+          const res = await safeAction(() => deleteStop(stopId))
+          if (!res.ok) toast.error(res.error)
+          else toast.success("Stop deleted")
+        })
       }}
     >
       Delete
@@ -42,7 +53,12 @@ export function RemoveActivityButton({ stopActivityId }: { stopActivityId: strin
       size="sm"
       variant="ghost"
       disabled={pending}
-      onClick={() => startTransition(() => removeStopActivity(stopActivityId))}
+      onClick={() =>
+        startTransition(async () => {
+          const res = await safeAction(() => removeStopActivity(stopActivityId))
+          if (!res.ok) toast.error(res.error)
+        })
+      }
     >
       Remove
     </Button>

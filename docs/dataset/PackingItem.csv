@@ -1,0 +1,56 @@
+id,tripId,label,category,packed
+pk_001,trip_001,Passport,documents,True
+pk_002,trip_002,Travel Insurance,documents,True
+pk_003,trip_003,Visa Documents,documents,True
+pk_004,trip_004,Flight Tickets,documents,False
+pk_005,trip_005,Hotel Bookings,documents,False
+pk_006,trip_006,Phone Charger,electronics,True
+pk_007,trip_007,Universal Adapter,electronics,True
+pk_008,trip_008,Portable Power Bank,electronics,False
+pk_009,trip_009,Laptop,electronics,True
+pk_010,trip_010,Camera,electronics,False
+pk_011,trip_011,Noise-Cancelling Headphones,electronics,False
+pk_012,trip_012,E-Reader,electronics,False
+pk_013,trip_013,T-Shirts (5),clothing,False
+pk_014,trip_014,Jeans,clothing,False
+pk_015,trip_015,Shorts (2),clothing,True
+pk_016,trip_016,Waterproof Jacket,clothing,True
+pk_017,trip_017,Swimsuit,clothing,True
+pk_018,trip_018,Hiking Boots,clothing,False
+pk_019,trip_019,Sandals,clothing,True
+pk_020,trip_020,Underwear (7),clothing,True
+pk_021,trip_021,Socks (7),clothing,True
+pk_022,trip_022,Sunglasses,clothing,True
+pk_023,trip_023,Sun Hat,clothing,False
+pk_024,trip_024,Sunscreen SPF 50,toiletries,True
+pk_025,trip_025,Insect Repellent,toiletries,False
+pk_026,trip_026,Shampoo,toiletries,False
+pk_027,trip_027,Toothbrush & Toothpaste,toiletries,True
+pk_028,trip_028,Hand Sanitizer,toiletries,True
+pk_029,trip_029,First Aid Kit,health,False
+pk_030,trip_030,Prescription Medication,health,True
+pk_031,trip_031,Painkillers,health,True
+pk_032,trip_032,Antidiarrheal Tablets,health,False
+pk_033,trip_033,Allergy Medicine,health,False
+pk_034,trip_034,Reusable Water Bottle,accessories,True
+pk_035,trip_035,Travel Pillow,accessories,True
+pk_036,trip_036,Luggage Lock,accessories,False
+pk_037,trip_037,Day Backpack,accessories,True
+pk_038,trip_038,Packing Cubes,accessories,False
+pk_039,trip_039,Travel Towel,accessories,True
+pk_040,trip_040,Guidebook,miscellaneous,False
+pk_041,trip_041,Journal & Pen,miscellaneous,False
+pk_042,trip_042,Local Currency,miscellaneous,False
+pk_043,trip_043,Travel Card,miscellaneous,False
+pk_044,trip_044,Snacks,food,True
+pk_045,trip_045,Protein Bars,food,True
+pk_046,trip_046,Coffee Sachets,food,False
+pk_047,trip_047,Reusable Cutlery,food,True
+pk_048,trip_048,Yoga Mat,sports,False
+pk_049,trip_049,Resistance Bands,sports,True
+pk_050,trip_050,Running Shoes,sports,False
+pk_051,trip_051,Swim Goggles,sports,True
+pk_052,trip_052,Snorkel Gear,sports,True
+pk_053,trip_053,Bike Lock,sports,False
+pk_054,trip_054,Rain Poncho,clothing,False
+pk_055,trip_055,Passport,documents,True

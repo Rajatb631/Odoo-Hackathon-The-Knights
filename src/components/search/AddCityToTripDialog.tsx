@@ -1,10 +1,12 @@
 "use client"
 
 import { useState, useTransition } from "react"
+import { toast } from "sonner"
 import {
   Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger,
 } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
+import { safeAction } from "@/lib/server-action-utils"
 import { addCityToTrip, getMyTripsForPicker } from "@/server/actions/search"
 
 type Trip = Awaited<ReturnType<typeof getMyTripsForPicker>>[number]
@@ -13,11 +15,11 @@ export function AddCityToTripDialog({ cityId, cityName }: { cityId: string; city
   const [open, setOpen] = useState(false)
   const [trips, setTrips] = useState<Trip[] | null>(null)
   const [pending, startTransition] = useTransition()
-  const [msg, setMsg] = useState<string | null>(null)
 
   async function load() {
-    const t = await getMyTripsForPicker()
-    setTrips(t)
+    const res = await safeAction(() => getMyTripsForPicker())
+    if (!res.ok) toast.error(res.error)
+    else setTrips(res.data)
   }
 
   return (
@@ -50,9 +52,13 @@ export function AddCityToTripDialog({ cityId, cityName }: { cityId: string; city
                   disabled={pending}
                   onClick={() =>
                     startTransition(async () => {
-                      await addCityToTrip(cityId, t.id)
-                      setMsg(`Added to "${t.name}"`)
-                      setTimeout(() => { setOpen(false); setMsg(null) }, 900)
+                      const res = await safeAction(() => addCityToTrip(cityId, t.id))
+                      if (!res.ok) {
+                        toast.error(res.error)
+                        return
+                      }
+                      toast.success(`Added ${cityName} to "${t.name}"`)
+                      setOpen(false)
                     })
                   }
                 >
@@ -62,7 +68,6 @@ export function AddCityToTripDialog({ cityId, cityName }: { cityId: string; city
             ))}
           </ul>
         )}
-        {msg && <p className="text-sm text-green-600 dark:text-green-400">{msg}</p>}
       </DialogContent>
     </Dialog>
   )

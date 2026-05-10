@@ -1,0 +1,56 @@
+id,tripId,authorId,stopId,body,createdAt
+note_001,trip_001,usr_alice00,stop_001,The hidden gem café on the corner serves the best espresso.,2025-06-24 00:00:00
+note_002,trip_002,usr_bob01,stop_002,Book tickets in advance — queues are 2+ hours on weekends.,2025-01-20 00:00:00
+note_003,trip_003,usr_carol02,stop_003,The night market starts at 6 PM. Don't miss the local street food!,2025-02-17 00:00:00
+note_004,trip_004,usr_dave03,stop_004,Pack light layers — mornings are cold even in summer.,2025-02-14 00:00:00
+note_005,trip_005,usr_eve04,stop_005,The local SIM card is cheap and offers great coverage.,2025-05-12 00:00:00
+note_006,trip_006,usr_frank05,stop_006,Taxi apps work better than street hails in this city.,2025-01-31 00:00:00
+note_007,trip_007,usr_grace06,stop_007,The sunset from the viewpoint is absolutely breathtaking.,2025-04-07 00:00:00
+note_008,trip_008,usr_hank07,stop_008,Try the local dish at the restaurant near the old square.,2025-01-11 00:00:00
+note_009,trip_009,usr_iris08,stop_009,Museums are free on the first Sunday of each month.,2025-04-20 00:00:00
+note_010,trip_010,usr_jack09,stop_010,Watch your belongings in crowded areas — pickpockets are active.,2025-03-13 00:00:00
+note_011,trip_011,usr_karen10,stop_011,The train ride between cities is scenic and affordable.,2025-05-23 00:00:00
+note_012,trip_012,usr_leo11,stop_012,Book accommodation early — this city fills up fast in peak season.,2025-03-09 00:00:00
+note_013,trip_013,usr_mona12,stop_013,The free walking tour from the main plaza is excellent.,2025-02-03 00:00:00
+note_014,trip_014,usr_neil13,stop_014,Tap water is safe to drink here.,2025-02-11 00:00:00
+note_015,trip_015,usr_olivia14,stop_015,Currency exchange at the airport is terrible — use ATMs in town.,2025-05-30 00:00:00
+note_016,trip_016,usr_pete15,stop_016,The beach is gorgeous but crowded; go early morning.,2025-03-07 00:00:00
+note_017,trip_017,usr_quinn16,stop_017,Excellent hiking trail starts behind the old monastery.,2025-01-02 00:00:00
+note_018,trip_018,usr_rose17,stop_018,Most restaurants don't open for dinner before 8 PM.,2025-03-26 00:00:00
+note_019,trip_019,usr_sam18,stop_019,The local festival this week is worth staying an extra night for.,2025-04-30 00:00:00
+note_020,trip_020,usr_tara19,stop_020,Public transport is surprisingly efficient and cheap.,2025-02-09 00:00:00
+note_021,trip_021,usr_uma20,stop_021,The hostel rooftop has a spectacular city view.,2025-01-11 00:00:00
+note_022,trip_022,usr_vince21,stop_022,Try the street cart near the main market for authentic flavors.,2025-02-09 00:00:00
+note_023,trip_023,usr_wendy22,stop_023,Visa on arrival is available at the airport for most nationalities.,2025-03-24 00:00:00
+note_024,trip_024,usr_xander23,stop_024,The hotel breakfast is included and very good.,2025-06-02 00:00:00
+note_025,trip_025,usr_yara24,stop_025,Renting a scooter is the best way to explore the island.,2025-01-14 00:00:00
+note_026,trip_026,usr_zoe25,stop_026,The ancient ruins are less crowded in the late afternoon.,2025-06-10 00:00:00
+note_027,trip_027,usr_aiden26,stop_027,Bring cash — many small vendors don't accept cards.,2025-06-07 00:00:00
+note_028,trip_028,usr_bella27,stop_028,The weather forecast says possible rain this afternoon.,2025-06-19 00:00:00
+note_029,trip_029,usr_carlos28,stop_029,Local guide Ahmed is highly recommended — great value.,2025-03-19 00:00:00
+note_030,trip_030,usr_diana29,stop_030,The mountain pass road is closed after heavy snow.,2025-05-06 00:00:00
+note_031,trip_031,usr_ethan30,stop_031,Free WiFi is available in the main square and most cafés.,2025-05-27 00:00:00
+note_032,trip_032,usr_fiona31,stop_032,The cooking class was a highlight of the whole trip.,2025-05-21 00:00:00
+note_033,trip_033,usr_george32,stop_033,Tipping is not expected but always appreciated.,2025-04-02 00:00:00
+note_034,trip_034,usr_hana33,stop_034,The botanical garden is free to enter and very peaceful.,2025-01-19 00:00:00
+note_035,trip_035,usr_ivan34,stop_035,The border crossing took about 90 minutes — plan accordingly.,2025-03-23 00:00:00
+note_036,trip_036,usr_julia35,stop_036,Photography is not allowed inside the temple.,2025-05-15 00:00:00
+note_037,trip_037,usr_kevin36,stop_037,There is a pharmacy two blocks from the hotel.,2025-02-26 00:00:00
+note_038,trip_038,usr_laura37,stop_038,The night bus is reliable and saves on accommodation.,2025-02-17 00:00:00
+note_039,trip_039,usr_mike38,stop_039,The city card offers unlimited transit and museum discounts.,2025-05-14 00:00:00
+note_040,trip_040,usr_nina39,stop_040,Arrive at the viewpoint before sunrise for the best colors.,2025-01-18 00:00:00
+note_041,trip_041,usr_oscar40,stop_041,The ferry to the island runs twice a day — check the schedule.,2025-05-10 00:00:00
+note_042,trip_042,usr_priya41,stop_042,Luggage storage is available at the train station.,2025-02-10 00:00:00
+note_043,trip_043,usr_raj42,stop_043,The hostel organized a brilliant free pub crawl.,2025-04-17 00:00:00
+note_044,trip_044,usr_sara43,stop_044,Car rental is the only practical option in this region.,2025-05-20 00:00:00
+note_045,trip_045,usr_tom44,stop_045,Carry a printed copy of your accommodation address.,2025-05-18 00:00:00
+note_046,trip_046,usr_ursula45,stop_046,The local wine is exceptional and very affordable.,2025-04-14 00:00:00
+note_047,trip_047,usr_victor46,stop_047,The beach bar happy hour starts at 4 PM.,2025-01-24 00:00:00
+note_048,trip_048,usr_willa47,stop_048,Wild camping is permitted in this national park.,2025-03-31 00:00:00
+note_049,trip_049,usr_xavier48,stop_049,The tourist office has great free maps.,2025-02-26 00:00:00
+note_050,trip_050,usr_yuki49,stop_050,This stop deserves at least two nights.,2025-02-24 00:00:00
+note_051,trip_051,usr_zach50,stop_051,Buy the multi-day transit pass — it pays off quickly.,2025-06-19 00:00:00
+note_052,trip_052,usr_amira51,stop_052,The concert in the square tonight is free entry.,2025-03-26 00:00:00
+note_053,trip_053,usr_bruno52,stop_053,Bargaining is expected and part of the shopping culture.,2025-03-26 00:00:00
+note_054,trip_054,usr_cleo53,stop_054,The rooftop restaurant has the best views in town.,2025-04-03 00:00:00
+note_055,trip_055,usr_dina54,stop_055,Check the tidal schedule before walking to the island.,2025-03-17 00:00:00

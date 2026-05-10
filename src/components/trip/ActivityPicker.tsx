@@ -1,10 +1,12 @@
 "use client"
 
 import { useState, useTransition } from "react"
+import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
 import {
   Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
 } from "@/components/ui/select"
+import { safeAction } from "@/lib/server-action-utils"
 import { addActivityToStop } from "@/server/actions/stops"
 
 type Activity = { id: string; name: string; cost: string; durationMin: number; type: string }
@@ -46,8 +48,9 @@ export function ActivityPicker({
         onClick={() => {
           if (!activityId) return
           startTransition(async () => {
-            await addActivityToStop(stopId, activityId)
-            setActivityId("")
+            const res = await safeAction(() => addActivityToStop(stopId, activityId))
+            if (!res.ok) toast.error(res.error)
+            else { toast.success("Activity added"); setActivityId("") }
           })
         }}
       >

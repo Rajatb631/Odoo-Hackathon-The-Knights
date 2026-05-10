@@ -1,7 +1,9 @@
 "use client"
 
 import { useTransition } from "react"
+import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
+import { safeAction } from "@/lib/server-action-utils"
 import { copyTrip } from "@/server/actions/community"
 
 export function CopyTripButton({ tripId }: { tripId: string }) {
@@ -16,12 +18,8 @@ export function CopyTripButton({ tripId }: { tripId: string }) {
         e.stopPropagation()
         if (!confirm("Copy this trip into your account?")) return
         startTransition(async () => {
-          try {
-            await copyTrip(tripId)
-          } catch (err) {
-            if ((err as Error).message?.includes("NEXT_REDIRECT")) return
-            alert((err as Error).message)
-          }
+          const res = await safeAction(() => copyTrip(tripId))
+          if (!res.ok) toast.error(res.error)
         })
       }}
     >

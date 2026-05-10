@@ -1,8 +1,10 @@
 "use client"
 
 import { useState, useTransition } from "react"
+import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { safeAction } from "@/lib/server-action-utils"
 import { addPackingItem, deletePackingItem, togglePackingItem } from "@/server/actions/packing"
 
 type Item = { id: string; label: string; category: string; packed: boolean }
@@ -45,17 +47,20 @@ export function PackingList({ tripId, items }: { tripId: string; items: Item[] }
           const lbl = label
           setLabel("")
           startTransition(async () => {
-            await addPackingItem(tripId, lbl, activeCat)
+            const res = await safeAction(() => addPackingItem(tripId, lbl, activeCat))
+            if (!res.ok) toast.error(res.error)
+            else if (!res.data.ok) toast.error(res.data.error)
           })
         }}
       >
         <div className="flex-1 min-w-[200px]">
-          <label className="text-sm font-medium">New item</label>
-          <Input value={label} onChange={(e) => setLabel(e.target.value)} placeholder="Walking shoes" />
+          <label className="text-sm font-medium" htmlFor="new-packing-label">New item</label>
+          <Input id="new-packing-label" value={label} onChange={(e) => setLabel(e.target.value)} placeholder="Walking shoes" />
         </div>
         <div>
-          <label className="text-sm font-medium">Category</label>
+          <label className="text-sm font-medium" htmlFor="new-packing-category">Category</label>
           <select
+            id="new-packing-category"
             value={activeCat}
             onChange={(e) => setActiveCat(e.target.value)}
             className="block border rounded h-9 px-3 text-sm"
@@ -74,26 +79,43 @@ export function PackingList({ tripId, items }: { tripId: string; items: Item[] }
               <p className="text-sm text-muted-foreground">Nothing in this category.</p>
             ) : (
               <ul className="divide-y">
-                {list.map((item) => (
-                  <li key={item.id} className="flex items-center gap-3 py-2">
-                    <input
-                      type="checkbox"
-                      checked={item.packed}
-                      onChange={() => startTransition(() => togglePackingItem(item.id))}
-                      className="size-4 cursor-pointer"
-                    />
-                    <span className={`flex-1 text-sm ${item.packed ? "line-through text-muted-foreground" : ""}`}>
-                      {item.label}
-                    </span>
-                    <Button
-                      size="sm"
-                      variant="ghost"
-                      onClick={() => startTransition(() => deletePackingItem(item.id))}
-                    >
-                      Remove
-                    </Button>
-                  </li>
-                ))}
+                {list.map((item) => {
+                  const checkboxId = `pack-${item.id}`
+                  return (
+                    <li key={item.id} className="flex items-center gap-3 py-2">
+                      <input
+                        id={checkboxId}
+                        type="checkbox"
+                        checked={item.packed}
+                        onChange={() =>
+                          startTransition(async () => {
+                            const res = await safeAction(() => togglePackingItem(item.id))
+                            if (!res.ok) toast.error(res.error)
+                          })
+                        }
+                        className="size-4 cursor-pointer"
+                      />
+                      <label
+                        htmlFor={checkboxId}
+                        className={`flex-1 text-sm cursor-pointer ${item.packed ? "line-through text-muted-foreground" : ""}`}
+                      >
+                        {item.label}
+                      </label>
+                      <Button
+                        size="sm"
+                        variant="ghost"
+                        onClick={() =>
+                          startTransition(async () => {
+                            const res = await safeAction(() => deletePackingItem(item.id))
+                            if (!res.ok) toast.error(res.error)
+                          })
+                        }
+                      >
+                        Remove
+                      </Button>
+                    </li>
+                  )
+                })}
               </ul>
             )}
           </div>

@@ -5,6 +5,7 @@ import { redirect } from "next/navigation"
 import { nanoid } from "nanoid"
 import { auth } from "@/lib/auth"
 import { prisma } from "@/lib/db"
+import { emptyToNull, parseDateOnly } from "@/lib/forms"
 import { createTripSchema, type CreateTripInput } from "@/lib/validations/trip"
 
 async function requireUserId() {
@@ -22,12 +23,12 @@ export async function createTrip(input: CreateTripInput) {
   const trip = await prisma.trip.create({
     data: {
       ownerId: userId,
-      name: parsed.data.name,
-      description: parsed.data.description ?? null,
-      startDate: new Date(parsed.data.startDate),
-      endDate: new Date(parsed.data.endDate),
-      budget: parsed.data.budget && parsed.data.budget !== "" ? parsed.data.budget : null,
-      coverImageId: parsed.data.coverImageId || null,
+      name: parsed.data.name.trim(),
+      description: emptyToNull(parsed.data.description),
+      startDate: parseDateOnly(parsed.data.startDate),
+      endDate: parseDateOnly(parsed.data.endDate),
+      budget: emptyToNull(parsed.data.budget),
+      coverImageId: emptyToNull(parsed.data.coverImageId),
     },
   })
   revalidatePath("/dashboard")
