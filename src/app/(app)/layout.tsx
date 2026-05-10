@@ -8,7 +8,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   if (!session?.user?.id) redirect("/login")
   const user = await prisma.user.findUnique({
     where: { id: session.user.id },
-    select: { photoId: true },
+    select: { photoId: true, role: true },
   })
   return (
     <>
@@ -16,6 +16,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
         name={session.user.name}
         email={session.user.email}
         photoId={user?.photoId ?? null}
+        role={user?.role}
       />
       <main className="container mx-auto px-4 py-6 flex-1">{children}</main>
     </>
