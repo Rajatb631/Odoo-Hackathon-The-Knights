@@ -6,6 +6,7 @@ export const createTripSchema = z.object({
   startDate: z.string().min(1, "Start date required"),
   endDate: z.string().min(1, "End date required"),
   budget: z.string().optional().nullable(),
+  coverImageId: z.string().optional().nullable(),
 }).refine((d) => new Date(d.endDate) >= new Date(d.startDate), {
   message: "End date must be on or after start date",
   path: ["endDate"],

@@ -27,6 +27,7 @@ export async function createTrip(input: CreateTripInput) {
       startDate: new Date(parsed.data.startDate),
       endDate: new Date(parsed.data.endDate),
       budget: parsed.data.budget && parsed.data.budget !== "" ? parsed.data.budget : null,
+      coverImageId: parsed.data.coverImageId || null,
     },
   })
   revalidatePath("/dashboard")

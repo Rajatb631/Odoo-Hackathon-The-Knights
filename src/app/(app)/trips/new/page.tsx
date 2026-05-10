@@ -15,19 +15,39 @@ import { createTrip } from "@/server/actions/trips"
 export default function NewTripPage() {
   const [error, setError] = useState<string | null>(null)
   const [pending, startTransition] = useTransition()
+  const [coverId, setCoverId] = useState<string | null>(null)
+  const [uploading, setUploading] = useState(false)
+  const [uploadErr, setUploadErr] = useState<string | null>(null)
 
   const { register, handleSubmit, formState: { errors } } = useForm<CreateTripInput>({
     resolver: zodResolver(createTripSchema),
   })
 
+  async function uploadCover(file: File) {
+    setUploadErr(null)
+    setUploading(true)
+    try {
+      const fd = new FormData()
+      fd.append("file", file)
+      const res = await fetch("/api/images/upload", { method: "POST", body: fd })
+      if (!res.ok) {
+        setUploadErr(await res.text())
+        return
+      }
+      const { id } = await res.json()
+      setCoverId(id)
+    } finally {
+      setUploading(false)
+    }
+  }
+
   const onSubmit = (data: CreateTripInput) => {
     setError(null)
     startTransition(async () => {
       try {
-        const res = await createTrip(data)
+        const res = await createTrip({ ...data, coverImageId: coverId })
         if (res && !res.ok) setError(res.error)
       } catch (e) {
-        // redirect throws — ignore
         if ((e as Error).message?.includes("NEXT_REDIRECT")) return
         setError((e as Error).message)
       }
@@ -69,9 +89,28 @@ export default function NewTripPage() {
               <Label htmlFor="description">Description</Label>
               <Textarea id="description" rows={3} placeholder="Two weeks in Italy + Greece" {...register("description")} />
             </div>
+            <div className="space-y-2">
+              <Label htmlFor="cover">Cover photo (optional)</Label>
+              <Input
+                id="cover"
+                type="file"
+                accept="image/png,image/jpeg,image/webp,image/avif"
+                disabled={uploading}
+                onChange={(e) => {
+                  const f = e.target.files?.[0]
+                  if (f) uploadCover(f)
+                }}
+              />
+              {uploading && <p className="text-xs text-muted-foreground">Uploading…</p>}
+              {uploadErr && <p className="text-xs text-destructive">{uploadErr}</p>}
+              {coverId && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={`/api/images/${coverId}`} alt="Cover preview" className="rounded border w-full aspect-[16/9] object-cover" />
+              )}
+            </div>
             {error && <p className="text-sm text-destructive">{error}</p>}
             <div className="flex gap-2">
-              <Button type="submit" disabled={pending}>{pending ? "Creating…" : "Create trip"}</Button>
+              <Button type="submit" disabled={pending || uploading}>{pending ? "Creating…" : "Create trip"}</Button>
               <Button asChild variant="ghost"><Link href="/trips">Cancel</Link></Button>
             </div>
           </form>
