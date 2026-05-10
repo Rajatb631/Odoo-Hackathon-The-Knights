@@ -71,40 +71,47 @@ export function ItineraryView({ trip, readOnly = false }: { trip: FullTrip; read
                   </CardHeader>
                   <CardContent className="space-y-3">
                     {stop.notes && <p className="text-sm italic text-muted-foreground">{stop.notes}</p>}
-                    {days.length > 0 && (
-                      <ul className="space-y-2">
-                        {days.map((day) => {
-                          const dayActivities = stop.stopActivities.filter((sa) => {
-                            if (!sa.scheduledAt) return false
-                            const d = new Date(sa.scheduledAt)
-                            d.setHours(0, 0, 0, 0)
-                            return d.getTime() === day.getTime()
-                          })
-                          return (
+                    {(() => {
+                      const dayBuckets = days.map((day) => {
+                        const dayActivities = stop.stopActivities.filter((sa) => {
+                          if (!sa.scheduledAt) return false
+                          const d = new Date(sa.scheduledAt)
+                          d.setHours(0, 0, 0, 0)
+                          return d.getTime() === day.getTime()
+                        })
+                        return { day, dayActivities }
+                      })
+                      const populated = dayBuckets.filter((b) => b.dayActivities.length > 0)
+                      const emptyCount = dayBuckets.length - populated.length
+                      if (populated.length === 0) return null
+                      return (
+                        <ul className="space-y-2">
+                          {populated.map(({ day, dayActivities }) => (
                             <li key={day.toISOString()} className="border-l-2 pl-3">
                               <p className="text-sm font-medium">{format(day, "EEE, MMM d")}</p>
-                              {dayActivities.length === 0 ? (
-                                <p className="text-sm text-muted-foreground">No scheduled activities.</p>
-                              ) : (
-                                <ul className="text-sm space-y-1 mt-1">
-                                  {dayActivities.map((sa) => (
-                                    <li key={sa.id}>
-                                      <span className="font-medium">{format(new Date(sa.scheduledAt!), "HH:mm")}</span>
-                                      {" — "}
-                                      {sa.activity.name}
-                                      <span className="text-muted-foreground"> (${Number(sa.costOverride ?? sa.activity.cost).toFixed(0)})</span>
-                                    </li>
-                                  ))}
-                                </ul>
-                              )}
+                              <ul className="text-sm space-y-1 mt-1">
+                                {dayActivities.map((sa) => (
+                                  <li key={sa.id}>
+                                    <span className="font-medium">{format(new Date(sa.scheduledAt!), "HH:mm")}</span>
+                                    {" — "}
+                                    {sa.activity.name}
+                                    <span className="text-muted-foreground"> (${Number(sa.costOverride ?? sa.activity.cost).toFixed(0)})</span>
+                                  </li>
+                                ))}
+                              </ul>
                             </li>
-                          )
-                        })}
-                      </ul>
-                    )}
+                          ))}
+                          {emptyCount > 0 && (
+                            <li className="text-xs text-muted-foreground italic pl-3">
+                              + {emptyCount} {emptyCount === 1 ? "day" : "days"} with no scheduled activities
+                            </li>
+                          )}
+                        </ul>
+                      )
+                    })()}
                     {stop.stopActivities.some((sa) => !sa.scheduledAt) && (
                       <div className="pt-2">
-                        <p className="text-sm font-medium">Unscheduled activities</p>
+                        <p className="text-sm font-medium">Activities</p>
                         <ul className="text-sm space-y-1 mt-1">
                           {stop.stopActivities.filter((sa) => !sa.scheduledAt).map((sa) => (
                             <li key={sa.id}>

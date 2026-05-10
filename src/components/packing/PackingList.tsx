@@ -29,27 +29,33 @@ export function PackingList({ tripId, items }: { tripId: string; items: Item[] }
 
   return (
     <div className="space-y-6">
-      <div className="border rounded-lg p-4 space-y-2">
-        <div className="flex items-center justify-between text-sm">
-          <span className="font-medium">Progress</span>
-          <span className="text-muted-foreground">{packed} / {total} packed ({pct}%)</span>
+      {total > 0 && (
+        <div className="border rounded-lg p-4 space-y-2">
+          <div className="flex items-center justify-between text-sm">
+            <span className="font-medium">Progress</span>
+            <span className="text-muted-foreground">{packed} / {total} packed ({pct}%)</span>
+          </div>
+          <div className="h-2 rounded bg-muted overflow-hidden">
+            <div className="h-full bg-primary transition-all" style={{ width: `${pct}%` }} />
+          </div>
         </div>
-        <div className="h-2 rounded bg-muted overflow-hidden">
-          <div className="h-full bg-primary transition-all" style={{ width: `${pct}%` }} />
-        </div>
-      </div>
+      )}
 
       <form
         className="flex gap-2 items-end flex-wrap border rounded-lg p-4"
         onSubmit={(e) => {
           e.preventDefault()
-          if (!label.trim()) return
-          const lbl = label
+          const lbl = label.trim()
+          if (!lbl) {
+            toast.error("Enter an item name")
+            return
+          }
           setLabel("")
           startTransition(async () => {
             const res = await safeAction(() => addPackingItem(tripId, lbl, activeCat))
             if (!res.ok) toast.error(res.error)
             else if (!res.data.ok) toast.error(res.data.error)
+            else toast.success(`Added ${lbl}`)
           })
         }}
       >
@@ -68,7 +74,7 @@ export function PackingList({ tripId, items }: { tripId: string; items: Item[] }
             {CATEGORIES.map((c) => <option key={c} value={c}>{c}</option>)}
           </select>
         </div>
-        <Button type="submit">Add</Button>
+        <Button type="submit" disabled={!label.trim()}>Add</Button>
       </form>
 
       <div className="space-y-4">

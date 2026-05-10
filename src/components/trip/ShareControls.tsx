@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useTransition } from "react"
+import { useEffect, useState, useTransition } from "react"
 import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
 import { safeAction } from "@/lib/server-action-utils"
@@ -19,8 +19,11 @@ export function ShareControls({
   const [token, setToken] = useState(initialToken)
   const [pending, startTransition] = useTransition()
   const [copied, setCopied] = useState(false)
+  const [origin, setOrigin] = useState<string | null>(null)
 
-  const url = token && typeof window !== "undefined" ? `${window.location.origin}/share/${token}` : null
+  useEffect(() => { setOrigin(window.location.origin) }, [])
+
+  const url = token && origin ? `${origin}/share/${token}` : null
 
   return (
     <div className="border rounded-lg p-4 space-y-2">
