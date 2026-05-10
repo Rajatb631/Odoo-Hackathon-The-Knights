@@ -36,6 +36,49 @@ export async function createTrip(input: CreateTripInput) {
   redirect(`/trips/${trip.id}/builder`)
 }
 
+export async function updateTrip(input: CreateTripInput & { id: string }) {
+  const userId = await requireUserId()
+  const trip = await prisma.trip.findUnique({ where: { id: input.id } })
+  if (!trip || trip.ownerId !== userId) throw new Error("Not found")
+
+  const parsed = createTripSchema.safeParse(input)
+  if (!parsed.success) {
+    return { ok: false as const, error: parsed.error.issues[0]?.message ?? "Invalid input" }
+  }
+
+  const newStart = parseDateOnly(parsed.data.startDate)
+  const newEnd = parseDateOnly(parsed.data.endDate)
+
+  // Ensure all existing stops still fit within the new trip range.
+  const stops = await prisma.stop.findMany({ where: { tripId: input.id } })
+  for (const s of stops) {
+    if (s.startDate < newStart || s.endDate > newEnd) {
+      return {
+        ok: false as const,
+        error: "Trip range must contain all existing stops. Adjust stops first.",
+      }
+    }
+  }
+
+  await prisma.trip.update({
+    where: { id: input.id },
+    data: {
+      name: parsed.data.name.trim(),
+      description: emptyToNull(parsed.data.description),
+      startDate: newStart,
+      endDate: newEnd,
+      budget: emptyToNull(parsed.data.budget),
+      coverImageId: emptyToNull(parsed.data.coverImageId),
+    },
+  })
+
+  revalidatePath(`/trips/${input.id}`)
+  revalidatePath(`/trips/${input.id}/builder`)
+  revalidatePath("/trips")
+  revalidatePath("/dashboard")
+  return { ok: true as const }
+}
+
 export async function deleteTrip(id: string) {
   const userId = await requireUserId()
   const trip = await prisma.trip.findUnique({ where: { id } })

@@ -35,6 +35,7 @@ export function LikeButton({
           }
           setLiked(res.data.liked)
           setCount(res.data.count)
+          if (res.data.liked) toast.success("Liked")
         })
       }}
     >
