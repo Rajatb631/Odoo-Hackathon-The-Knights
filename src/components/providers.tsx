@@ -7,7 +7,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <SessionProvider>
       {children}
-      <Toaster position="top-right" richColors closeButton />
+      <Toaster position="top-right" richColors duration={1500} />
     </SessionProvider>
   )
 }

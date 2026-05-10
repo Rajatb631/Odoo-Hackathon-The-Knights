@@ -20,6 +20,7 @@ export function CopyTripButton({ tripId }: { tripId: string }) {
         startTransition(async () => {
           const res = await safeAction(() => copyTrip(tripId))
           if (!res.ok) toast.error(res.error)
+          else toast.success("Trip copied to your account")
         })
       }}
     >

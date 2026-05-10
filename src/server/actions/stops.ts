@@ -23,7 +23,16 @@ export async function createStop(input: CreateStopInput) {
   const parsed = createStopSchema.safeParse(input)
   if (!parsed.success) return { ok: false as const, error: parsed.error.issues[0]?.message ?? "Invalid input" }
 
-  await assertTripOwner(parsed.data.tripId, userId)
+  const trip = await assertTripOwner(parsed.data.tripId, userId)
+
+  const stopStart = parseDateOnly(parsed.data.startDate)
+  const stopEnd = parseDateOnly(parsed.data.endDate)
+  if (stopStart < trip.startDate) {
+    return { ok: false as const, error: "Stop start cannot be before trip start" }
+  }
+  if (stopEnd > trip.endDate) {
+    return { ok: false as const, error: "Stop end cannot be after trip end" }
+  }
 
   const last = await prisma.stop.findFirst({
     where: { tripId: parsed.data.tripId },
@@ -35,8 +44,8 @@ export async function createStop(input: CreateStopInput) {
     data: {
       tripId: parsed.data.tripId,
       cityId: parsed.data.cityId,
-      startDate: parseDateOnly(parsed.data.startDate),
-      endDate: parseDateOnly(parsed.data.endDate),
+      startDate: stopStart,
+      endDate: stopEnd,
       budget: emptyToNull(parsed.data.budget),
       notes: emptyToNull(parsed.data.notes),
       order: nextOrder,
