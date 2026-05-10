@@ -1,0 +1,6 @@
+id,tripId,cityId,startDate,endDate,budget,notes,order
+stop_paris,trip_europe,city_paris,2025-06-15,2025-06-21,1800.00,Stay at Le Marais Airbnb. Metro pass pre-purchased.,1
+stop_rome,trip_europe,city_rome,2025-06-22,2025-06-29,1700.00,Apartment near Trastevere. Book Colosseum tickets in advance!,2
+stop_tokyo,trip_sea,city_tokyo,2025-03-01,2025-03-10,1400.00,Shinjuku hotel booked. Get Suica card at airport.,1
+stop_bali,trip_sea,city_bali,2025-03-11,2025-03-21,1400.00,Villa in Seminyak. Motorbike rental recommended.,2
+stop_nyc,trip_usa,city_nyc,2025-05-09,2025-05-12,1200.00,Midtown hotel. Times Square is walking distance.,1

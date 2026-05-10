@@ -1,0 +1,12 @@
+id,stopId,activityId,scheduledAt,costOverride
+sa_01,stop_paris,act_eiffel,2025-06-16 10:00:00,
+sa_02,stop_paris,act_louvre,2025-06-17 09:30:00,
+sa_03,stop_paris,act_seine,2025-06-19 20:00:00,
+sa_04,stop_rome,act_colosseum,2025-06-23 09:00:00,
+sa_05,stop_rome,act_pasta,2025-06-25 15:00:00,70.00
+sa_06,stop_tokyo,act_shibuya,2025-03-02 18:00:00,
+sa_07,stop_tokyo,act_tsukiji,2025-03-04 07:30:00,
+sa_08,stop_bali,act_rice,2025-03-13 05:30:00,
+sa_09,stop_bali,act_yoga,2025-03-15 06:00:00,
+sa_10,stop_nyc,act_liberty,2025-05-10 09:00:00,
+sa_11,stop_nyc,act_highline,2025-05-11 14:00:00,

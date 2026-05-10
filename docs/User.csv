@@ -1,0 +1,5 @@
+id,email,passwordHash,firstName,lastName,phone,city,country,bio,role,photoId,createdAt
+usr_alice,alice@travelpool.io,$2b$10$placeholder_hash,Alice,Martin,+33 6 12 34 56 78,Paris,France,"Avid traveller, coffee snob, aspiring polyglot.",ADMIN,img_avatar_alice,2025-01-01 00:00:00
+usr_bob,bob@travelpool.io,$2b$10$placeholder_hash,Bob,Tanaka,+81 90 1234 5678,Tokyo,Japan,Street food hunter and temple enthusiast.,USER,img_avatar_bob,2025-01-01 00:00:00
+usr_carol,carol@travelpool.io,$2b$10$placeholder_hash,Carol,Santos,+62 812 3456 7890,Bali,Indonesia,Yoga retreat junkie & surf beginner.,USER,img_avatar_carol,2025-01-01 00:00:00
+usr_dave,dave@travelpool.io,$2b$10$placeholder_hash,Dave,Kim,+1 212 555 0100,New York,USA,Museum marathoner and Broadway ticket hoarder.,USER,img_avatar_dave,2025-01-01 00:00:00
