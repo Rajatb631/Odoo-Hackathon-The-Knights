@@ -11,7 +11,7 @@ export function DeleteExpenseButton({ expenseId }: { expenseId: string }) {
   return (
     <Button
       size="sm"
-      variant="ghost"
+      variant="destructive"
       disabled={pending}
       onClick={() =>
         startTransition(async () => {

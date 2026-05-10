@@ -30,7 +30,7 @@ export function DeleteStopButton({ stopId }: { stopId: string }) {
   return (
     <Button
       size="sm"
-      variant="outline"
+      variant="destructive"
       disabled={pending}
       onClick={() => {
         if (!confirm("Delete this stop and its activities?")) return
@@ -51,7 +51,7 @@ export function RemoveActivityButton({ stopActivityId }: { stopActivityId: strin
   return (
     <Button
       size="sm"
-      variant="ghost"
+      variant="destructive"
       disabled={pending}
       onClick={() =>
         startTransition(async () => {

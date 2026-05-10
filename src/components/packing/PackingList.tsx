@@ -109,7 +109,7 @@ export function PackingList({ tripId, items }: { tripId: string; items: Item[] }
                       </label>
                       <Button
                         size="sm"
-                        variant="ghost"
+                        variant="destructive"
                         onClick={() =>
                           startTransition(async () => {
                             const res = await safeAction(() => deletePackingItem(item.id))
