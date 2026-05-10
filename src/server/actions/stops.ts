@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache"
 import { auth } from "@/lib/auth"
 import { prisma } from "@/lib/db"
+import { emptyToNull, parseDateOnly } from "@/lib/forms"
 import { createStopSchema, type CreateStopInput } from "@/lib/validations/stop"
 
 async function requireUserId() {
@@ -34,10 +35,10 @@ export async function createStop(input: CreateStopInput) {
     data: {
       tripId: parsed.data.tripId,
       cityId: parsed.data.cityId,
-      startDate: new Date(parsed.data.startDate),
-      endDate: new Date(parsed.data.endDate),
-      budget: parsed.data.budget && parsed.data.budget !== "" ? parsed.data.budget : null,
-      notes: parsed.data.notes ?? null,
+      startDate: parseDateOnly(parsed.data.startDate),
+      endDate: parseDateOnly(parsed.data.endDate),
+      budget: emptyToNull(parsed.data.budget),
+      notes: emptyToNull(parsed.data.notes),
       order: nextOrder,
     },
   })

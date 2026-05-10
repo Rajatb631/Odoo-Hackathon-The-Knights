@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache"
 import { auth } from "@/lib/auth"
 import { prisma } from "@/lib/db"
+import { parseDateOnly } from "@/lib/forms"
 import { createExpenseSchema, type CreateExpenseInput } from "@/lib/validations/expense"
 
 async function requireUserId() {
@@ -28,7 +29,7 @@ export async function createExpense(input: CreateExpenseInput) {
       category: parsed.data.category,
       label: parsed.data.label,
       amount: parsed.data.amount,
-      date: new Date(parsed.data.date),
+      date: parseDateOnly(parsed.data.date),
     },
   })
   revalidatePath(`/trips/${parsed.data.tripId}/expenses`)

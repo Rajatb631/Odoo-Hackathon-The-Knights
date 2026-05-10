@@ -1,0 +1,56 @@
+id,name,country,region,costIndex,popularity,imageId
+city_paris,Paris,France,Western Europe,8,95,img_city_paris
+city_rome,Rome,Italy,Southern Europe,7,90,img_city_rome
+city_tokyo,Tokyo,Japan,East Asia,7,92,img_city_tokyo
+city_new_york,New York,USA,North America,9,93,img_city_new_york
+city_bangkok,Bangkok,Thailand,Southeast Asia,3,88,img_city_bangkok
+city_barcelona,Barcelona,Spain,Southern Europe,6,87,img_city_barcelona
+city_bali,Bali,Indonesia,Southeast Asia,2,85,img_city_bali
+city_amsterdam,Amsterdam,Netherlands,Western Europe,7,84,img_city_amsterdam
+city_sydney,Sydney,Australia,Oceania,8,82,img_city_sydney
+city_dubai,Dubai,UAE,Middle East,8,80,img_city_dubai
+city_istanbul,Istanbul,Turkey,Eastern Europe,4,83,img_city_istanbul
+city_prague,Prague,Czech Republic,Eastern Europe,4,81,img_city_prague
+city_lisbon,Lisbon,Portugal,Southern Europe,5,79,img_city_lisbon
+city_singapore,Singapore,Singapore,Southeast Asia,9,86,img_city_singapore
+city_cape_town,Cape Town,South Africa,Africa,4,78,img_city_cape_town
+city_mexico_city,Mexico City,Mexico,North America,3,75,img_city_mexico_city
+city_cairo,Cairo,Egypt,Africa,3,72,img_city_cairo
+city_buenos_aires,Buenos Aires,Argentina,South America,3,74,img_city_buenos_aires
+city_vienna,Vienna,Austria,Western Europe,7,80,img_city_vienna
+city_seoul,Seoul,South Korea,East Asia,6,83,img_city_seoul
+city_marrakech,Marrakech,Morocco,Africa,3,76,img_city_marrakech
+city_kyoto,Kyoto,Japan,East Asia,6,84,img_city_kyoto
+city_london,London,UK,Western Europe,9,91,img_city_london
+city_zurich,Zurich,Switzerland,Western Europe,10,70,img_city_zurich
+city_copenhagen,Copenhagen,Denmark,Northern Europe,9,72,img_city_copenhagen
+city_vancouver,Vancouver,Canada,North America,8,75,img_city_vancouver
+city_reykjavik,Reykjavik,Iceland,Northern Europe,9,68,img_city_reykjavik
+city_athens,Athens,Greece,Southern Europe,5,80,img_city_athens
+city_budapest,Budapest,Hungary,Eastern Europe,4,79,img_city_budapest
+city_ho_chi_minh_city,Ho Chi Minh City,Vietnam,Southeast Asia,2,71,img_city_ho_chi_minh_city
+city_havana,Havana,Cuba,Caribbean,3,65,img_city_havana
+city_nairobi,Nairobi,Kenya,Africa,3,60,img_city_nairobi
+city_lima,Lima,Peru,South America,3,62,img_city_lima
+city_edinburgh,Edinburgh,UK,Western Europe,6,73,img_city_edinburgh
+city_porto,Porto,Portugal,Southern Europe,4,74,img_city_porto
+city_florence,Florence,Italy,Southern Europe,7,82,img_city_florence
+city_seville,Seville,Spain,Southern Europe,5,76,img_city_seville
+city_dubrovnik,Dubrovnik,Croatia,Southern Europe,6,77,img_city_dubrovnik
+city_tallinn,Tallinn,Estonia,Northern Europe,4,68,img_city_tallinn
+city_warsaw,Warsaw,Poland,Eastern Europe,4,70,img_city_warsaw
+city_krakow,Krakow,Poland,Eastern Europe,3,72,img_city_krakow
+city_bruges,Bruges,Belgium,Western Europe,6,66,img_city_bruges
+city_salzburg,Salzburg,Austria,Western Europe,7,70,img_city_salzburg
+city_bergen,Bergen,Norway,Northern Europe,8,65,img_city_bergen
+city_ljubljana,Ljubljana,Slovenia,Southern Europe,5,67,img_city_ljubljana
+city_bratislava,Bratislava,Slovakia,Eastern Europe,4,62,img_city_bratislava
+city_ghent,Ghent,Belgium,Western Europe,6,65,img_city_ghent
+city_riga,Riga,Latvia,Northern Europe,4,65,img_city_riga
+city_vilnius,Vilnius,Lithuania,Northern Europe,4,63,img_city_vilnius
+city_valletta,Valletta,Malta,Southern Europe,6,65,img_city_valletta
+city_nicosia,Nicosia,Cyprus,Southern Europe,5,60,img_city_nicosia
+city_tbilisi,Tbilisi,Georgia,Eastern Europe,3,62,img_city_tbilisi
+city_yerevan,Yerevan,Armenia,Eastern Europe,3,58,img_city_yerevan
+city_almaty,Almaty,Kazakhstan,Central Asia,4,55,img_city_almaty
+city_tashkent,Tashkent,Uzbekistan,Central Asia,3,52,img_city_tashkent

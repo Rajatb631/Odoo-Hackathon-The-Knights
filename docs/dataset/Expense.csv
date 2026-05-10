@@ -1,0 +1,56 @@
+id,tripId,category,label,amount,date
+exp_001,trip_001,accommodation,Hotel check-in,109.11,2025-10-28
+exp_002,trip_002,accommodation,Hostel bunk,27.73,2025-04-06
+exp_003,trip_003,accommodation,Airbnb night,110.36,2025-06-10
+exp_004,trip_004,accommodation,Guesthouse room,52.92,2025-10-05
+exp_005,trip_005,accommodation,Airport hotel,120.66,2025-10-26
+exp_006,trip_006,food,Dinner at local restaurant,30.69,2025-05-01
+exp_007,trip_007,food,Street food lunch,8.85,2025-10-04
+exp_008,trip_008,food,Grocery run,28.15,2025-11-03
+exp_009,trip_009,food,Café breakfast,11.89,2025-09-23
+exp_010,trip_010,food,Bar tab,39.72,2025-07-08
+exp_011,trip_011,food,Fine dining,104.58,2025-08-20
+exp_012,trip_012,food,Food market tour,43.95,2025-05-03
+exp_013,trip_013,transport,Flight booking,379.28,2025-08-01
+exp_014,trip_014,transport,Train ticket,66.08,2025-10-20
+exp_015,trip_015,transport,Bus intercity,18.78,2025-04-07
+exp_016,trip_016,transport,Taxi ride,17.49,2025-05-15
+exp_017,trip_017,transport,Metro day pass,7.68,2025-07-07
+exp_018,trip_018,transport,Ferry crossing,31.85,2025-06-15
+exp_019,trip_019,transport,Scooter rental,25.72,2025-05-27
+exp_020,trip_020,transport,Car rental day,69.48,2025-10-15
+exp_021,trip_021,activity,Museum entry,20.04,2025-05-29
+exp_022,trip_022,activity,City tour,45.41,2025-06-16
+exp_023,trip_023,activity,Cooking class,49.86,2025-06-27
+exp_024,trip_024,activity,Adventure activity,97.43,2025-05-13
+exp_025,trip_025,activity,Spa session,74.82,2025-07-30
+exp_026,trip_026,activity,Concert ticket,74.36,2025-09-22
+exp_027,trip_027,activity,Surf lesson,50.55,2025-11-24
+exp_028,trip_028,shopping,Souvenir shopping,41.07,2025-09-12
+exp_029,trip_029,shopping,Clothing market,48.71,2025-04-12
+exp_030,trip_030,shopping,Bookshop,16.38,2025-08-01
+exp_031,trip_031,shopping,Local handicrafts,41.36,2025-10-18
+exp_032,trip_032,health,Pharmacy,13.89,2025-11-12
+exp_033,trip_033,health,Travel insurance,48.94,2025-03-26
+exp_034,trip_034,health,Doctor visit,100.44,2025-12-12
+exp_035,trip_035,miscellaneous,Visa fee,49.7,2025-08-11
+exp_036,trip_036,miscellaneous,Luggage storage,6.01,2025-07-21
+exp_037,trip_037,miscellaneous,Laundry service,8.08,2025-04-25
+exp_038,trip_038,miscellaneous,SIM card,10.31,2025-08-17
+exp_039,trip_039,miscellaneous,Travel adapter,10.09,2025-10-28
+exp_040,trip_040,miscellaneous,ATM fee,5.89,2025-05-19
+exp_041,trip_041,miscellaneous,Travel guidebook,14.81,2025-05-18
+exp_042,trip_042,miscellaneous,Currency exchange fee,7.83,2025-05-29
+exp_043,trip_043,activity,Museum membership,21.33,2025-06-08
+exp_044,trip_044,activity,Day trip,38.61,2025-06-04
+exp_045,trip_045,activity,Snorkelling tour,59.13,2025-10-23
+exp_046,trip_046,transport,Bike hire,14.86,2025-03-03
+exp_047,trip_047,transport,Airport transfer,31.11,2025-12-05
+exp_048,trip_048,shopping,Travel pillow,12.74,2025-09-05
+exp_049,trip_049,food,Breakfast at hotel,21.57,2025-08-12
+exp_050,trip_050,food,Bottled water,2.84,2025-11-09
+exp_051,trip_051,transport,Night bus,19.18,2025-11-17
+exp_052,trip_052,transport,Speed boat,51.15,2025-06-25
+exp_053,trip_053,activity,National park entry,21.54,2025-11-22
+exp_054,trip_054,miscellaneous,Temple donation,4.35,2025-07-10
+exp_055,trip_055,miscellaneous,Tip pool,16.05,2025-05-14

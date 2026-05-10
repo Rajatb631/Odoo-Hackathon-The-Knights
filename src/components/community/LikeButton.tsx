@@ -1,7 +1,9 @@
 "use client"
 
 import { useState, useTransition } from "react"
+import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
+import { safeAction } from "@/lib/server-action-utils"
 import { toggleLike } from "@/server/actions/community"
 
 export function LikeButton({
@@ -26,9 +28,13 @@ export function LikeButton({
         e.preventDefault()
         e.stopPropagation()
         startTransition(async () => {
-          const res = await toggleLike(tripId)
-          setLiked(res.liked)
-          setCount(res.count)
+          const res = await safeAction(() => toggleLike(tripId))
+          if (!res.ok) {
+            toast.error(res.error)
+            return
+          }
+          setLiked(res.data.liked)
+          setCount(res.data.count)
         })
       }}
     >

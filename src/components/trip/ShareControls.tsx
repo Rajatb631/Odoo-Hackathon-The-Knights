@@ -1,7 +1,9 @@
 "use client"
 
 import { useState, useTransition } from "react"
+import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
+import { safeAction } from "@/lib/server-action-utils"
 import { toggleShare } from "@/server/actions/trips"
 
 export function ShareControls({
@@ -35,11 +37,14 @@ export function ShareControls({
           disabled={pending}
           onClick={() =>
             startTransition(async () => {
-              const res = await toggleShare(tripId)
-              if (res.ok) {
-                setPublic(res.isPublic)
-                setToken(res.shareToken)
+              const res = await safeAction(() => toggleShare(tripId))
+              if (!res.ok) {
+                toast.error(res.error)
+                return
               }
+              setPublic(res.data.isPublic)
+              setToken(res.data.shareToken)
+              toast.success(res.data.isPublic ? "Trip is public" : "Trip is private")
             })
           }
         >

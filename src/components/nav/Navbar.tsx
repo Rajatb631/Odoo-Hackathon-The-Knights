@@ -52,7 +52,12 @@ export function Navbar({
           </DropdownMenu>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="sm" className="ml-2 h-8 w-8 rounded-full p-0 overflow-hidden">
+              <Button
+                variant="outline"
+                size="sm"
+                aria-label="Open profile menu"
+                className="ml-2 h-8 w-8 rounded-full p-0 overflow-hidden"
+              >
                 {photoId ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img src={`/api/images/${photoId}`} alt="" className="h-8 w-8 object-cover" />

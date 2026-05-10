@@ -23,20 +23,22 @@ export async function addCityToTrip(cityId: string, tripId: string) {
   })
   const nextOrder = (last?.order ?? 0) + 1
 
-  // Default dates: continue from last stop's end, or trip.startDate
-  const start = last ? new Date(last.endDate) : new Date(trip.startDate)
-  const end = new Date(start)
-  end.setDate(end.getDate() + 2)
-  // clamp to trip range
+  const tripStart = new Date(trip.startDate)
   const tripEnd = new Date(trip.endDate)
-  const clampedEnd = end > tripEnd ? tripEnd : end
+
+  const rawStart = last ? new Date(last.endDate) : tripStart
+  const start = rawStart < tripStart ? tripStart : rawStart > tripEnd ? tripEnd : rawStart
+
+  const candidateEnd = new Date(start)
+  candidateEnd.setDate(candidateEnd.getDate() + 2)
+  const end = candidateEnd > tripEnd ? tripEnd : candidateEnd < start ? start : candidateEnd
 
   await prisma.stop.create({
     data: {
       tripId,
       cityId,
       startDate: start,
-      endDate: clampedEnd,
+      endDate: end,
       order: nextOrder,
     },
   })

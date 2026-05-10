@@ -1,0 +1,56 @@
+id,ownerId,name,description,coverImageId,startDate,endDate,budget,status,isPublic,shareToken,createdAt
+trip_001,usr_alice00,European Summer Adventure,An amazing journey: European Summer Adventure.,img_trip_001,2025-10-16,2025-10-28,7791.24,planned,True,share-000-european-summer,2024-11-17 00:00:00
+trip_002,usr_bob01,Southeast Asia Wanderlust,An amazing journey: Southeast Asia Wanderlust.,img_trip_002,2025-03-22,2025-04-11,7912.1,completed,True,share-001-southeast-asia-,2024-11-26 00:00:00
+trip_003,usr_carol02,USA Road Trip,An amazing journey: USA Road Trip.,img_trip_003,2025-05-15,2025-06-10,2898.12,draft,False,,2024-11-12 00:00:00
+trip_004,usr_dave03,Japan Cherry Blossom,An amazing journey: Japan Cherry Blossom.,img_trip_004,2025-09-15,2025-10-09,4640.41,active,False,,2025-01-06 00:00:00
+trip_005,usr_eve04,Morocco Magic,An amazing journey: Morocco Magic.,img_trip_005,2025-10-21,2025-10-28,1343.89,planned,False,,2024-11-19 00:00:00
+trip_006,usr_frank05,Scandinavia Explorer,An amazing journey: Scandinavia Explorer.,img_trip_006,2025-04-21,2025-05-01,6393.09,cancelled,True,share-005-scandinavia-exp,2024-12-15 00:00:00
+trip_007,usr_grace06,South American Dream,An amazing journey: South American Dream.,img_trip_007,2025-09-27,2025-10-12,5410.91,cancelled,False,,2025-01-17 00:00:00
+trip_008,usr_hank07,Middle East Journey,An amazing journey: Middle East Journey.,img_trip_008,2025-10-29,2025-11-06,2565.61,planned,True,share-007-middle-east-jou,2025-01-19 00:00:00
+trip_009,usr_iris08,Australia & NZ Tour,An amazing journey: Australia & NZ Tour.,img_trip_009,2025-09-22,2025-09-30,7171.81,active,False,,2025-01-28 00:00:00
+trip_010,usr_jack09,East African Safari,An amazing journey: East African Safari.,img_trip_010,2025-06-30,2025-07-08,7406.26,active,False,,2024-11-03 00:00:00
+trip_011,usr_karen10,Caribbean Escape,An amazing journey: Caribbean Escape.,img_trip_011,2025-08-20,2025-09-05,2602.6,completed,False,,2025-01-29 00:00:00
+trip_012,usr_leo11,Balkan Discovery,An amazing journey: Balkan Discovery.,img_trip_012,2025-04-20,2025-05-04,2753.6,completed,True,share-011-balkan-discover,2024-12-12 00:00:00
+trip_013,usr_mona12,Greek Islands Hop,An amazing journey: Greek Islands Hop.,img_trip_013,2025-07-16,2025-08-15,5037.34,draft,False,,2024-11-25 00:00:00
+trip_014,usr_neil13,Central America Trek,An amazing journey: Central America Trek.,img_trip_014,2025-10-13,2025-10-26,6057.09,cancelled,False,,2024-12-18 00:00:00
+trip_015,usr_olivia14,Silk Road Adventure,An amazing journey: Silk Road Adventure.,img_trip_015,2025-03-29,2025-04-21,992.13,cancelled,True,share-014-silk-road-adven,2024-12-22 00:00:00
+trip_016,usr_pete15,Transatlantic Rail,An amazing journey: Transatlantic Rail.,img_trip_016,2025-05-09,2025-06-01,1803.03,planned,True,share-015-transatlantic-r,2024-11-08 00:00:00
+trip_017,usr_quinn16,Pacific Islands Tour,An amazing journey: Pacific Islands Tour.,img_trip_017,2025-07-06,2025-07-14,879.19,active,False,,2025-01-30 00:00:00
+trip_018,usr_rose17,Alpine Escape,An amazing journey: Alpine Escape.,img_trip_018,2025-06-10,2025-06-25,6676.3,cancelled,False,,2024-12-21 00:00:00
+trip_019,usr_sam18,Mediterranean Cruise,An amazing journey: Mediterranean Cruise.,img_trip_019,2025-05-03,2025-05-31,2314.54,completed,True,share-018-mediterranean-c,2025-01-16 00:00:00
+trip_020,usr_tara19,Digital Nomad Europe,An amazing journey: Digital Nomad Europe.,img_trip_020,2025-10-15,2025-10-27,4901.6,active,False,,2024-12-15 00:00:00
+trip_021,usr_uma20,Backpacking SE Asia,An amazing journey: Backpacking SE Asia.,img_trip_021,2025-05-23,2025-06-07,2638.02,completed,True,share-020-backpacking-se-,2024-11-07 00:00:00
+trip_022,usr_vince21,Epic US National Parks,An amazing journey: Epic US National Parks.,img_trip_022,2025-05-23,2025-06-17,6928.33,planned,True,share-021-epic-us-nationa,2025-01-26 00:00:00
+trip_023,usr_wendy22,Canadian Rockies,An amazing journey: Canadian Rockies.,img_trip_023,2025-06-14,2025-06-29,4349.61,draft,False,,2024-12-31 00:00:00
+trip_024,usr_xander23,West Africa Discovery,An amazing journey: West Africa Discovery.,img_trip_024,2025-05-07,2025-06-03,5008.56,draft,True,share-023-west-africa-dis,2024-11-29 00:00:00
+trip_025,usr_yara24,India Spiritual Tour,An amazing journey: India Spiritual Tour.,img_trip_025,2025-07-08,2025-08-03,5845.55,active,False,,2024-12-25 00:00:00
+trip_026,usr_zoe25,China Heritage Trip,An amazing journey: China Heritage Trip.,img_trip_026,2025-09-09,2025-09-27,2389.99,completed,False,,2024-12-09 00:00:00
+trip_027,usr_aiden26,Patagonia Expedition,An amazing journey: Patagonia Expedition.,img_trip_027,2025-11-22,2025-12-18,4883.65,draft,False,,2025-01-05 00:00:00
+trip_028,usr_bella27,Nordic Fjords,An amazing journey: Nordic Fjords.,img_trip_028,2025-09-08,2025-10-02,2738.57,draft,False,,2025-01-01 00:00:00
+trip_029,usr_carlos28,Cuba Time Machine,An amazing journey: Cuba Time Machine.,img_trip_029,2025-04-02,2025-04-19,5304.46,active,False,,2024-12-04 00:00:00
+trip_030,usr_diana29,Persian Gulf Luxe,An amazing journey: Persian Gulf Luxe.,img_trip_030,2025-07-31,2025-08-13,4379.7,planned,True,share-029-persian-gulf-lu,2024-11-08 00:00:00
+trip_031,usr_ethan30,East Europe Budget Tour,An amazing journey: East Europe Budget Tour.,img_trip_031,2025-09-23,2025-10-21,5605.67,draft,False,,2025-01-23 00:00:00
+trip_032,usr_fiona31,Mexican Riviera,An amazing journey: Mexican Riviera.,img_trip_032,2025-11-10,2025-11-26,7301.84,completed,False,,2024-12-20 00:00:00
+trip_033,usr_george32,Balkans on a Budget,An amazing journey: Balkans on a Budget.,img_trip_033,2025-03-19,2025-04-13,3073.75,planned,True,share-032-balkans-on-a-bu,2025-01-27 00:00:00
+trip_034,usr_hana33,Island Hopping Greece,An amazing journey: Island Hopping Greece.,img_trip_034,2025-11-29,2025-12-26,7298.95,active,False,,2025-01-04 00:00:00
+trip_035,usr_ivan34,Surf Trip Portugal,An amazing journey: Surf Trip Portugal.,img_trip_035,2025-08-01,2025-08-13,2703.38,completed,True,share-034-surf-trip-portu,2024-11-17 00:00:00
+trip_036,usr_julia35,Culinary France,An amazing journey: Culinary France.,img_trip_036,2025-07-11,2025-08-10,7601.93,active,True,share-035-culinary-france,2025-01-23 00:00:00
+trip_037,usr_kevin36,Art & Wine Italy,An amazing journey: Art & Wine Italy.,img_trip_037,2025-04-15,2025-04-29,2174.96,active,False,,2024-12-24 00:00:00
+trip_038,usr_laura37,Desert Adventure UAE,An amazing journey: Desert Adventure UAE.,img_trip_038,2025-08-17,2025-09-04,4891.78,completed,False,,2024-11-16 00:00:00
+trip_039,usr_mike38,Bali Wellness Retreat,An amazing journey: Bali Wellness Retreat.,img_trip_039,2025-10-27,2025-11-04,4041.65,planned,True,share-038-bali-wellness-r,2025-01-04 00:00:00
+trip_040,usr_nina39,Colombia Hidden Gems,An amazing journey: Colombia Hidden Gems.,img_trip_040,2025-05-01,2025-05-29,4473.79,completed,False,,2024-11-07 00:00:00
+trip_041,usr_oscar40,Vietnam End to End,An amazing journey: Vietnam End to End.,img_trip_041,2025-05-17,2025-05-28,3070.02,cancelled,True,share-040-vietnam-end-to-,2024-12-29 00:00:00
+trip_042,usr_priya41,Nepal Himalaya Trek,An amazing journey: Nepal Himalaya Trek.,img_trip_042,2025-05-13,2025-05-30,6342.06,completed,True,share-041-nepal-himalaya-,2024-12-13 00:00:00
+trip_043,usr_raj42,Kenya & Tanzania Safari,An amazing journey: Kenya & Tanzania Safari.,img_trip_043,2025-05-30,2025-06-16,535.35,active,True,share-042-kenya-&-tanzani,2024-11-27 00:00:00
+trip_044,usr_sara43,Sri Lanka Circuit,An amazing journey: Sri Lanka Circuit.,img_trip_044,2025-05-26,2025-06-20,4171.83,draft,True,share-043-sri-lanka-circu,2024-11-17 00:00:00
+trip_045,usr_tom44,Georgia Country Tour,An amazing journey: Georgia Country Tour.,img_trip_045,2025-10-09,2025-11-05,3525.45,completed,False,,2024-12-20 00:00:00
+trip_046,usr_ursula45,Jordan & Israel,An amazing journey: Jordan & Israel.,img_trip_046,2025-03-03,2025-03-11,5979.94,draft,True,share-045-jordan-&-israel,2024-12-12 00:00:00
+trip_047,usr_victor46,Iceland Ring Road,An amazing journey: Iceland Ring Road.,img_trip_047,2025-11-27,2025-12-10,5575.61,planned,True,share-046-iceland-ring-ro,2024-11-29 00:00:00
+trip_048,usr_willa47,Scotland Highlands,An amazing journey: Scotland Highlands.,img_trip_048,2025-08-24,2025-09-09,1270.31,cancelled,True,share-047-scotland-highla,2025-01-15 00:00:00
+trip_049,usr_xavier48,Ireland Wild Atlantic,An amazing journey: Ireland Wild Atlantic.,img_trip_049,2025-08-04,2025-08-16,6678.83,active,True,share-048-ireland-wild-at,2024-12-08 00:00:00
+trip_050,usr_yuki49,Cyprus Explorer,An amazing journey: Cyprus Explorer.,img_trip_050,2025-10-20,2025-11-19,3752.49,planned,False,,2024-12-14 00:00:00
+trip_051,usr_zach50,Malta & Gozo,An amazing journey: Malta & Gozo.,img_trip_051,2025-11-06,2025-11-24,1736.63,completed,True,share-050-malta-&-gozo,2024-11-03 00:00:00
+trip_052,usr_amira51,Azores Adventure,An amazing journey: Azores Adventure.,img_trip_052,2025-06-25,2025-07-09,2083.93,draft,True,share-051-azores-adventur,2025-01-15 00:00:00
+trip_053,usr_bruno52,Faroe Islands Discovery,An amazing journey: Faroe Islands Discovery.,img_trip_053,2025-11-14,2025-11-26,3249.44,draft,True,share-052-faroe-islands-d,2024-12-19 00:00:00
+trip_054,usr_cleo53,Trans-Siberian Railway,An amazing journey: Trans-Siberian Railway.,img_trip_054,2025-07-09,2025-08-02,4954.43,draft,True,share-053-trans-siberian-,2025-01-24 00:00:00
+trip_055,usr_dina54,Solo Japan Deep Dive,An amazing journey: Solo Japan Deep Dive.,img_trip_055,2025-04-25,2025-05-22,861.76,draft,True,share-054-solo-japan-deep,2024-12-24 00:00:00

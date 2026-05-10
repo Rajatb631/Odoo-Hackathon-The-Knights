@@ -6,8 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default async function AdminPage() {
   const session = await auth()
-  const role = (session?.user as { role?: string } | undefined)?.role
-  if (role !== "ADMIN") notFound()
+  if (session?.user?.role !== "ADMIN") notFound()
 
   const [
     userTotal,

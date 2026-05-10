@@ -1,0 +1,56 @@
+id,tripId,cityId,startDate,endDate,budget,notes,order
+stop_001,trip_001,city_paris,2025-10-16,2025-10-21,632.36,Explore the best of Paris during this leg.,1
+stop_002,trip_002,city_rome,2025-03-22,2025-03-26,764.15,Explore the best of Rome during this leg.,1
+stop_003,trip_003,city_tokyo,2025-05-15,2025-05-18,387.69,Explore the best of Tokyo during this leg.,1
+stop_004,trip_004,city_new_york,2025-09-15,2025-09-17,521.56,Explore the best of New York during this leg.,1
+stop_005,trip_005,city_bangkok,2025-10-21,2025-10-23,1027.48,Explore the best of Bangkok during this leg.,1
+stop_006,trip_006,city_barcelona,2025-04-21,2025-04-25,971.92,Explore the best of Barcelona during this leg.,1
+stop_007,trip_007,city_bali,2025-09-27,2025-09-30,686.36,Explore the best of Bali during this leg.,1
+stop_008,trip_008,city_amsterdam,2025-10-29,2025-10-31,816.22,Explore the best of Amsterdam during this leg.,1
+stop_009,trip_009,city_sydney,2025-09-22,2025-09-24,495.79,Explore the best of Sydney during this leg.,1
+stop_010,trip_010,city_dubai,2025-06-30,2025-07-02,796.83,Explore the best of Dubai during this leg.,1
+stop_011,trip_011,city_istanbul,2025-08-20,2025-08-23,1189.14,Explore the best of Istanbul during this leg.,1
+stop_012,trip_012,city_prague,2025-04-20,2025-04-23,601.09,Explore the best of Prague during this leg.,1
+stop_013,trip_013,city_lisbon,2025-07-16,2025-07-21,513.49,Explore the best of Lisbon during this leg.,1
+stop_014,trip_014,city_singapore,2025-10-13,2025-10-15,867.39,Explore the best of Singapore during this leg.,1
+stop_015,trip_015,city_cape_town,2025-03-29,2025-04-01,1063.49,Explore the best of Cape Town during this leg.,1
+stop_016,trip_016,city_mexico_city,2025-05-09,2025-05-14,562.85,Explore the best of Mexico City during this leg.,1
+stop_017,trip_017,city_cairo,2025-07-06,2025-07-08,117.85,Explore the best of Cairo during this leg.,1
+stop_018,trip_018,city_buenos_aires,2025-06-10,2025-06-12,1369.63,Explore the best of Buenos Aires during this leg.,1
+stop_019,trip_019,city_vienna,2025-05-03,2025-05-08,308.8,Explore the best of Vienna during this leg.,1
+stop_020,trip_020,city_seoul,2025-10-15,2025-10-17,1191.34,Explore the best of Seoul during this leg.,1
+stop_021,trip_021,city_marrakech,2025-05-23,2025-05-25,1112.99,Explore the best of Marrakech during this leg.,1
+stop_022,trip_022,city_kyoto,2025-05-23,2025-05-25,1366.69,Explore the best of Kyoto during this leg.,1
+stop_023,trip_023,city_london,2025-06-14,2025-06-17,739.45,Explore the best of London during this leg.,1
+stop_024,trip_024,city_zurich,2025-05-07,2025-05-11,469.78,Explore the best of Zurich during this leg.,1
+stop_025,trip_025,city_copenhagen,2025-07-08,2025-07-10,239.73,Explore the best of Copenhagen during this leg.,1
+stop_026,trip_026,city_vancouver,2025-09-09,2025-09-12,1323.8,Explore the best of Vancouver during this leg.,1
+stop_027,trip_027,city_reykjavik,2025-11-22,2025-11-26,604.3,Explore the best of Reykjavik during this leg.,1
+stop_028,trip_028,city_athens,2025-09-08,2025-09-12,696.39,Explore the best of Athens during this leg.,1
+stop_029,trip_029,city_budapest,2025-04-02,2025-04-04,233.0,Explore the best of Budapest during this leg.,1
+stop_030,trip_030,city_ho_chi_minh_city,2025-07-31,2025-08-02,113.54,Explore the best of Ho Chi Minh City during this leg.,1
+stop_031,trip_031,city_havana,2025-09-23,2025-09-26,1028.7,Explore the best of Havana during this leg.,1
+stop_032,trip_032,city_nairobi,2025-11-10,2025-11-13,560.13,Explore the best of Nairobi during this leg.,1
+stop_033,trip_033,city_lima,2025-03-19,2025-03-24,1437.12,Explore the best of Lima during this leg.,1
+stop_034,trip_034,city_edinburgh,2025-11-29,2025-12-03,1329.87,Explore the best of Edinburgh during this leg.,1
+stop_035,trip_035,city_porto,2025-08-01,2025-08-03,621.67,Explore the best of Porto during this leg.,1
+stop_036,trip_036,city_florence,2025-07-11,2025-07-15,356.02,Explore the best of Florence during this leg.,1
+stop_037,trip_037,city_seville,2025-04-15,2025-04-20,660.35,Explore the best of Seville during this leg.,1
+stop_038,trip_038,city_dubrovnik,2025-08-17,2025-08-22,480.57,Explore the best of Dubrovnik during this leg.,1
+stop_039,trip_039,city_tallinn,2025-10-27,2025-11-01,1065.86,Explore the best of Tallinn during this leg.,1
+stop_040,trip_040,city_warsaw,2025-05-01,2025-05-06,1219.86,Explore the best of Warsaw during this leg.,1
+stop_041,trip_041,city_krakow,2025-05-17,2025-05-20,258.28,Explore the best of Krakow during this leg.,1
+stop_042,trip_042,city_bruges,2025-05-13,2025-05-15,1474.2,Explore the best of Bruges during this leg.,1
+stop_043,trip_043,city_salzburg,2025-05-30,2025-06-02,245.2,Explore the best of Salzburg during this leg.,1
+stop_044,trip_044,city_bergen,2025-05-26,2025-05-31,1223.17,Explore the best of Bergen during this leg.,1
+stop_045,trip_045,city_ljubljana,2025-10-09,2025-10-14,353.76,Explore the best of Ljubljana during this leg.,1
+stop_046,trip_046,city_bratislava,2025-03-03,2025-03-08,1190.83,Explore the best of Bratislava during this leg.,1
+stop_047,trip_047,city_ghent,2025-11-27,2025-11-29,1307.61,Explore the best of Ghent during this leg.,1
+stop_048,trip_048,city_riga,2025-08-24,2025-08-27,776.31,Explore the best of Riga during this leg.,1
+stop_049,trip_049,city_vilnius,2025-08-04,2025-08-09,258.11,Explore the best of Vilnius during this leg.,1
+stop_050,trip_050,city_valletta,2025-10-20,2025-10-25,716.96,Explore the best of Valletta during this leg.,1
+stop_051,trip_051,city_nicosia,2025-11-06,2025-11-08,466.26,Explore the best of Nicosia during this leg.,1
+stop_052,trip_052,city_tbilisi,2025-06-25,2025-06-29,117.3,Explore the best of Tbilisi during this leg.,1
+stop_053,trip_053,city_yerevan,2025-11-14,2025-11-17,1469.05,Explore the best of Yerevan during this leg.,1
+stop_054,trip_054,city_almaty,2025-07-09,2025-07-13,826.74,Explore the best of Almaty during this leg.,1
+stop_055,trip_055,city_tashkent,2025-04-25,2025-04-27,705.99,Explore the best of Tashkent during this leg.,1

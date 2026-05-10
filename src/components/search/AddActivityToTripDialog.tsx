@@ -1,10 +1,12 @@
 "use client"
 
 import { useState, useTransition } from "react"
+import { toast } from "sonner"
 import {
   Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger,
 } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
+import { safeAction } from "@/lib/server-action-utils"
 import { addActivityToExistingStop, getMyTripsForPicker } from "@/server/actions/search"
 
 type Trip = Awaited<ReturnType<typeof getMyTripsForPicker>>[number]
@@ -21,14 +23,13 @@ export function AddActivityToTripDialog({
   const [open, setOpen] = useState(false)
   const [trips, setTrips] = useState<Trip[] | null>(null)
   const [pending, startTransition] = useTransition()
-  const [msg, setMsg] = useState<string | null>(null)
 
   async function load() {
-    const t = await getMyTripsForPicker()
-    setTrips(t)
+    const res = await safeAction(() => getMyTripsForPicker())
+    if (!res.ok) toast.error(res.error)
+    else setTrips(res.data)
   }
 
-  // Filter to stops in the same city as the activity
   const matchingStops = (trips ?? []).flatMap((t) =>
     t.stops
       .filter((s) => !cityId || s.cityId === cityId)
@@ -67,9 +68,14 @@ export function AddActivityToTripDialog({
                   disabled={pending}
                   onClick={() =>
                     startTransition(async () => {
-                      const res = await addActivityToExistingStop(s.stopId, activityId)
-                      setMsg(res.duplicate ? "Already added" : `Added to "${s.tripName}"`)
-                      setTimeout(() => { setOpen(false); setMsg(null) }, 900)
+                      const res = await safeAction(() => addActivityToExistingStop(s.stopId, activityId))
+                      if (!res.ok) {
+                        toast.error(res.error)
+                        return
+                      }
+                      if (res.data.duplicate) toast.info("Already added")
+                      else toast.success(`Added to "${s.tripName}"`)
+                      setOpen(false)
                     })
                   }
                 >
@@ -79,7 +85,6 @@ export function AddActivityToTripDialog({
             ))}
           </ul>
         )}
-        {msg && <p className="text-sm text-green-600 dark:text-green-400">{msg}</p>}
       </DialogContent>
     </Dialog>
   )
