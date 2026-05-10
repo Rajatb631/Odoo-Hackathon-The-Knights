@@ -1,0 +1,21 @@
+id,tripId,category,label,amount,date
+exp_01,trip_europe,transport,CDG Airport → Hotel taxi,55.00,2025-06-15
+exp_02,trip_europe,stay,Le Marais Airbnb (6 nights),720.00,2025-06-15
+exp_03,trip_europe,activities,Eiffel Tower tickets x2,56.00,2025-06-16
+exp_04,trip_europe,meals,Dinner at Le Grand Véfour,180.00,2025-06-17
+exp_05,trip_europe,transport,Paris → Rome TGV + Frecciarossa,210.00,2025-06-22
+exp_06,trip_europe,stay,Trastevere apartment (7 nights),630.00,2025-06-22
+exp_07,trip_europe,activities,Colosseum guided tour x2,44.00,2025-06-23
+exp_08,trip_europe,meals,Gelato coffee & street food Rome,95.00,2025-06-24
+exp_09,trip_sea,transport,Tokyo → Bali flight,380.00,2025-03-10
+exp_10,trip_sea,stay,Shinjuku hotel (9 nights),810.00,2025-03-01
+exp_11,trip_sea,meals,Ramen sushi & yakitori Tokyo,220.00,2025-03-05
+exp_12,trip_sea,stay,Seminyak villa (10 nights),450.00,2025-03-11
+exp_13,trip_sea,transport,Motorbike rental (10 days),50.00,2025-03-11
+exp_14,trip_sea,meals,Warungs & beach clubs Bali,180.00,2025-03-15
+exp_15,trip_sea,other,Souvenirs & gifts,120.00,2025-03-20
+exp_16,trip_usa,stay,Midtown hotel (3 nights),540.00,2025-05-09
+exp_17,trip_usa,activities,Broadway show — Hamilton,189.00,2025-05-10
+exp_18,trip_usa,meals,Peter Luger Steak House,145.00,2025-05-11
+exp_19,trip_usa,transport,Ubers across the city (3 days),78.00,2025-05-11
+exp_20,trip_usa,activities,NYC CityPASS x1,142.00,2025-05-09
