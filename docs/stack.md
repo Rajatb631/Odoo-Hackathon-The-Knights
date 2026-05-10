@@ -31,14 +31,14 @@ Single-repo Next.js full-stack app. Frontend, backend (server actions + route ha
 | Password hashing | bcryptjs | + `@types/bcryptjs` |
 | Session strategy | JWT (NextAuth default) | Stateless, no session table |
 | Share tokens | nanoid | Public trip share URLs (`/share/[token]`) |
-| File uploads | `public/uploads/` (local) | Hackathon shortcut; UploadThing later if hosted |
+| File uploads | Stored in Postgres as `bytea` | Binary blobs in DB — single source of truth, works on Neon + local. Served via `/api/images/[id]` route handler with proper `Content-Type` |
 | PDF export (post-MVP) | @react-pdf/renderer | Expense invoice screen |
 
 ## Database
 
 | Purpose | Tool | Notes |
 |---|---|---|
-| RDBMS | PostgreSQL | 16+. Local Docker or Neon/Supabase free tier |
+| RDBMS | PostgreSQL | 16+. Works with both local Postgres (Docker / installed) **and** NeonDB. Switch via `DATABASE_URL` in `.env` — Prisma client + connection string are identical for either |
 | ORM | Prisma | Schema in `prisma/schema.prisma`. Migrations via `pnpm prisma migrate dev` |
 | Seed | tsx + `prisma/seed.ts` | ~30 cities, ~50 activities seeded for search UIs |
 | Connection pool | Prisma singleton in `src/lib/db.ts` | Dev hot-reload safe pattern |
@@ -62,8 +62,8 @@ Single-repo Next.js full-stack app. Frontend, backend (server actions + route ha
 | Purpose | Tool |
 |---|---|
 | App hosting | Vercel |
-| Postgres hosting | Neon (or Supabase) — free tier |
-| File storage (post-MVP) | UploadThing or Vercel Blob |
+| Postgres hosting | NeonDB (cloud) **or** local Postgres — driven by `DATABASE_URL` |
+| File storage | Inside Postgres (`bytea` columns). No external object store |
 | Domain | Vercel-provided subdomain for hackathon demo |
 | CI | Vercel automatic preview deploys per PR |
 

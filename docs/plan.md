@@ -18,8 +18,8 @@ Odoo Hackathon problem: build **Traveloop** — a personalized multi-city travel
 - **State:** Server components + minimal client state (Zustand only if needed)
 - **Date:** date-fns
 - **Maps (optional):** Leaflet + OpenStreetMap (no API key)
-- **File uploads (cover photo, profile pic):** UploadThing or local `/public/uploads` for hackathon
-- **Hosting:** Vercel (deploy) + Neon/Supabase Postgres (free tier)
+- **File uploads (cover photo, profile pic):** stored as `bytea` in Postgres; served via `/api/images/[id]` route handler
+- **Hosting:** Vercel (deploy) + Postgres (NeonDB cloud **or** self-hosted local — switch via `DATABASE_URL`)
 - **Package manager:** pnpm
 
 ## Repository layout
@@ -30,8 +30,7 @@ Odoo Hackathon problem: build **Traveloop** — a personalized multi-city travel
 ├── prisma/
 │   ├── schema.prisma
 │   └── seed.ts                     # seed cities + activity catalog
-├── public/
-│   └── uploads/                    # cover photos / avatars
+├── public/                         # static assets only — uploads live in DB
 ├── src/
 │   ├── app/
 │   │   ├── (auth)/
@@ -57,7 +56,9 @@ Odoo Hackathon problem: build **Traveloop** — a personalized multi-city travel
 │   │   │   └── admin/page.tsx              # Screen 14 (PDF) / 12 (SVG) — optional
 │   │   ├── share/[token]/page.tsx          # Screen 11 (PDF) — public read-only
 │   │   ├── api/
-│   │   │   └── auth/[...nextauth]/route.ts
+│   │   │   ├── auth/[...nextauth]/route.ts
+│   │   │   ├── images/[id]/route.ts        # serves Image bytea with Content-Type
+│   │   │   └── images/upload/route.ts      # POST multipart, writes to Image table
 │   │   ├── layout.tsx
 │   │   └── globals.css
 │   ├── components/
@@ -88,6 +89,17 @@ Odoo Hackathon problem: build **Traveloop** — a personalized multi-city travel
 ## Data model (Prisma)
 
 ```prisma
+model Image {
+  id        String   @id @default(cuid())
+  data      Bytes    // bytea — actual file
+  mimeType  String   // image/png, image/jpeg, ...
+  createdAt DateTime @default(now())
+  usersAsPhoto    User[] @relation("UserPhoto")
+  tripsAsCover    Trip[] @relation("TripCover")
+  citiesAsImage   City[] @relation("CityImage")
+  activitiesAsImg Activity[] @relation("ActivityImage")
+}
+
 model User {
   id           String   @id @default(cuid())
   email        String   @unique
@@ -97,7 +109,8 @@ model User {
   phone        String?
   city         String?
   country      String?
-  photoUrl     String?
+  photoId      String?
+  photo        Image?   @relation("UserPhoto", fields: [photoId], references: [id])
   bio          String?
   role         Role     @default(USER)
   createdAt    DateTime @default(now())
@@ -113,7 +126,8 @@ model Trip {
   owner       User      @relation(fields: [ownerId], references: [id])
   name        String
   description String?
-  coverUrl    String?
+  coverImageId String?
+  coverImage   Image?   @relation("TripCover", fields: [coverImageId], references: [id])
   startDate   DateTime
   endDate     DateTime
   budget      Decimal?  // overall planned budget
@@ -136,7 +150,8 @@ model City {
   region     String?
   costIndex  Int       // 1..10
   popularity Int       // 1..100
-  imageUrl   String?
+  imageId    String?
+  image      Image?   @relation("CityImage", fields: [imageId], references: [id])
   stops      Stop[]
   activities Activity[]
   @@unique([name, country])
@@ -165,7 +180,8 @@ model Activity {
   description String?
   cost        Decimal
   durationMin Int
-  imageUrl    String?
+  imageId     String?
+  image       Image?   @relation("ActivityImage", fields: [imageId], references: [id])
   stopActivities StopActivity[]
 }
 
