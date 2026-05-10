@@ -18,21 +18,56 @@ model Image {
 }
 
 model User {
-  id           String   @id @default(cuid())
-  email        String   @unique
-  passwordHash String?
-  firstName    String
-  lastName     String
-  phone        String?
-  city         String?
-  country      String?
-  photoId      String?
-  photo        Image?   @relation("UserPhoto", fields: [photoId], references: [id])
-  bio          String?
-  role         Role     @default(USER)
-  createdAt    DateTime @default(now())
-  trips        Trip[]
-  notes        Note[]
+  id            String    @id @default(cuid())
+  email         String    @unique
+  emailVerified DateTime?
+  passwordHash  String?
+  firstName     String
+  lastName      String
+  phone         String?
+  city          String?
+  country       String?
+  photoId       String?
+  photo         Image?    @relation("UserPhoto", fields: [photoId], references: [id])
+  bio           String?
+  role          Role      @default(USER)
+  createdAt     DateTime  @default(now())
+  trips         Trip[]
+  notes         Note[]
+  accounts      Account[]
+  sessions      Session[]
+}
+
+model Account {
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([provider, providerAccountId])
+}
+
+model Session {
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String
+  expires    DateTime
+
+  @@id([identifier, token])
 }
 
 enum Role {
